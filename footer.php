@@ -8,7 +8,7 @@ get_template_part('components/inc','loading');
 if ( $opt_back_to_top == '1' ) :
 ?>
     <div id="back-top">
-        <a href="#">
+        <a class="btn-back-top" href="#">
             <i class="fa fa-chevron-up"></i>
         </a>
     </div>
@@ -19,9 +19,8 @@ if ( !is_404() ) :
 ?>
     <footer class="global-footer">
         <?php
+        get_template_part( 'components/footer/inc','nav' );
         get_template_part( 'components/footer/inc','column' );
-
-        get_template_part( 'components/footer/inc','copyright' );
         ?>
     </footer>
 <?php

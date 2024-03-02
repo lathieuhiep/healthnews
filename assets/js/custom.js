@@ -13,7 +13,7 @@
     $( document ).ready( function () {
 
         /* Start back top */
-        $('#back-top').on( 'click', function (e) {
+        $('.btn-back-top').on( 'click', function (e) {
             e.preventDefault();
             $('html').scrollTop(0);
         } );

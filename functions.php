@@ -7,6 +7,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 // Required: Theme Helper
 require get_parent_theme_file_path( '/includes/theme-helper.php' );
 
+// Required: Theme Get Options
+require get_parent_theme_file_path( '/includes/theme-get-options.php' );
+
 // Setup Theme
 add_action( 'after_setup_theme', 'healthnews_setup' );
 function healthnews_setup(): void {
@@ -48,6 +51,7 @@ function healthnews_setup(): void {
     register_nav_menus(
         array(
             'primary'   => esc_html__('Primary Menu', 'healthnews'),
+            'footer-menu'   => esc_html__('Footer menu', 'healthnews'),
         )
     );
 
@@ -85,11 +89,3 @@ require get_parent_theme_file_path( '/includes/register-sidebar.php' );
 
 // Require Theme Scripts
 require get_parent_theme_file_path( '/includes/theme-scripts.php' );
-
-// Require Woocommerce
-if ( class_exists( 'Woocommerce' ) ) :
-	require get_parent_theme_file_path( '/extension/woocommerce/woo-scripts.php' );
-	require get_parent_theme_file_path( '/extension/woocommerce/woo-quick-view.php' );
-	require get_parent_theme_file_path( '/extension/woocommerce/woo-template-hooks.php' );
-	require get_parent_theme_file_path( '/extension/woocommerce/woo-template-functions.php' );
-endif;

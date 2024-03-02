@@ -1,18 +1,57 @@
 .global-footer {
-  section {
-    &.widget {
-      margin-bottom: 15px;
+  font-size: 1.4rem;
+
+  &__nav {
+    .grid-layout {
+      padding: .5rem 1rem;
+      border: 1px solid #bcbabb;
+      display: grid;
+      grid-gap: 1.2rem;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+
+      .menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          display: inline-block;
+          text-transform: uppercase;
+          font-weight: 500;
+
+          ~ li {
+            margin-left: 2rem;
+          }
+        }
+      }
+
+      .action-box {
+        .btn-back-top {
+          display: inline-block;
+
+          i {
+            margin-right: .2rem;
+            text-align: center;
+            @include square(2rem, 50%);
+            line-height: 2rem;
+            font-size: 1.1rem;
+            border: 1px solid #bcbabb;
+          }
+        }
+      }
     }
   }
 
   &__column {
-    border-top: 1px solid $border-color;
-    padding: 30px 0;
-  }
+    .box-warp {
+      padding: 1rem;
+      border-right: 1px solid #bcbabb;
+      border-left: 1px solid #bcbabb;
 
-  &__bottom {
-    padding: 10px 0;
-    color: $color-white;
-    background-color: $body-color;
+      p {
+        margin-bottom: 0;
+      }
+    }
   }
 }

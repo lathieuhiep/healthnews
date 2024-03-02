@@ -35,13 +35,6 @@ function healthnews_register_required_plugins() {
 
 		// This is an example of how to include a plugin from the WordPress Plugin Repository
 		array(
-			'name'      =>  'Woocommerce',
-			'slug'      =>  'woocommerce',
-			'required'  =>  true,
-		),
-
-		// This is an example of how to include a plugin from the WordPress Plugin Repository
-		array(
 			'name'      =>  'Breadcrumb Navxt',
 			'slug'      =>  'breadcrumb-navxt',
 			'required'  =>  true,

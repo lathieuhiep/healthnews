@@ -25,61 +25,90 @@ if ( class_exists( 'CSF' ) ) {
 		'footer_after'        => '<pre>Contact me:<br />Zalo/Phone: 0975458209 - Skype: lathieuhiep - facebook: <a href="https://www.facebook.com/lathieuhiep" target="_blank">lathieuhiep</a></pre>',
 	) );
 
+    //
 	// Create a section general
 	CSF::createSection( $healthnews_prefix, array(
+        'id'    => 'opt_general_section',
 		'title'  => esc_html__( 'General', 'healthnews' ),
 		'icon'   => 'fas fa-cog',
-		'fields' => array(
-			// favicon
-			array(
-				'id'      => 'opt_general_favicon',
-				'type'    => 'media',
-				'title'   => esc_html__( 'Upload Image Favicon', 'healthnews' ),
-				'library' => 'image',
-				'url'     => false
-			),
-
-			// logo
-			array(
-				'id'      => 'opt_general_logo',
-				'type'    => 'media',
-				'title'   => esc_html__( 'Upload Image Logo', 'healthnews' ),
-				'library' => 'image',
-				'url'     => false
-			),
-
-			// show loading
-			array(
-				'id'         => 'opt_general_loading',
-				'type'       => 'switcher',
-				'title'      => esc_html__( 'website loader', 'healthnews' ),
-				'text_on'    => esc_html__( 'Yes', 'healthnews' ),
-				'text_off'   => esc_html__( 'No', 'healthnews' ),
-				'text_width' => 80,
-				'default'    => false
-			),
-
-			array(
-				'id'         => 'opt_general_image_loading',
-				'type'       => 'media',
-				'title'      => esc_html__( 'Upload Image Loading', 'healthnews' ),
-				'subtitle'   => esc_html__( 'Use file .git', 'healthnews' ) . ' <a href="https://loading.io/" target="_blank">loading.io</a>',
-				'dependency' => array( 'opt_general_loading', '==', 'true' ),
-				'url'        => false
-			),
-
-			// show back to top
-			array(
-				'id'         => 'opt_general_back_to_top',
-				'type'       => 'switcher',
-				'title'      => esc_html__( 'Use Back To Top', 'healthnews' ),
-				'text_on'    => esc_html__( 'Yes', 'healthnews' ),
-				'text_off'   => esc_html__( 'No', 'healthnews' ),
-				'text_width' => 80,
-				'default'    => true
-			),
-		)
 	) );
+
+    // Global
+    CSF::createSection( $healthnews_prefix, array(
+        'parent' => 'opt_general_section',
+        'title'  => esc_html__( 'Toàn cục', 'healthnews' ),
+        'fields' => array(
+            // favicon
+            array(
+                'id'      => 'opt_general_favicon',
+                'type'    => 'media',
+                'title'   => esc_html__( 'Upload Image Favicon', 'healthnews' ),
+                'library' => 'image',
+                'url'     => false
+            ),
+
+            // logo
+            array(
+                'id'      => 'opt_general_logo',
+                'type'    => 'media',
+                'title'   => esc_html__( 'Logo Header', 'healthnews' ),
+                'library' => 'image',
+                'url'     => false
+            ),
+
+            // show loading
+            array(
+                'id'         => 'opt_general_loading',
+                'type'       => 'switcher',
+                'title'      => esc_html__( 'website loader', 'healthnews' ),
+                'text_on'    => esc_html__( 'Yes', 'healthnews' ),
+                'text_off'   => esc_html__( 'No', 'healthnews' ),
+                'text_width' => 80,
+                'default'    => false
+            ),
+
+            array(
+                'id'         => 'opt_general_image_loading',
+                'type'       => 'media',
+                'title'      => esc_html__( 'Upload Image Loading', 'healthnews' ),
+                'subtitle'   => esc_html__( 'Use file .git', 'healthnews' ) . ' <a href="https://loading.io/" target="_blank">loading.io</a>',
+                'dependency' => array( 'opt_general_loading', '==', 'true' ),
+                'url'        => false
+            ),
+
+            // show back to top
+            array(
+                'id'         => 'opt_general_back_to_top',
+                'type'       => 'switcher',
+                'title'      => esc_html__( 'Use Back To Top', 'healthnews' ),
+                'text_on'    => esc_html__( 'Yes', 'healthnews' ),
+                'text_off'   => esc_html__( 'No', 'healthnews' ),
+                'text_width' => 80,
+                'default'    => true
+            ),
+        )
+    ) );
+
+    // Contact
+    CSF::createSection( $healthnews_prefix, array(
+        'parent' => 'opt_general_section',
+        'title'  => esc_html__( 'Liên hệ', 'healthnews' ),
+        'fields' => array(
+            array(
+                'id'      => 'opt_general_contact_hotline',
+                'type'    => 'text',
+                'title'   => esc_html__( 'Hotline', 'healthnews' ),
+                'default' => '1900.115'
+            ),
+
+            array(
+                'id'      => 'opt_general_contact_email',
+                'type'    => 'text',
+                'title'   => esc_html__( 'Email', 'healthnews' ),
+                'default' => 'mail@suckhoedanang.com'
+            ),
+        )
+    ) );
 
 	//
 	// Create a section menu
@@ -92,17 +121,6 @@ if ( class_exists( 'CSF' ) ) {
 				'id'         => 'opt_menu_sticky',
 				'type'       => 'switcher',
 				'title'      => esc_html__( 'Sticky menu', 'healthnews' ),
-				'text_on'    => esc_html__( 'Yes', 'healthnews' ),
-				'text_off'   => esc_html__( 'No', 'healthnews' ),
-				'text_width' => 80,
-				'default'    => true
-			),
-
-			// Show cart
-			array(
-				'id'         => 'opt_menu_cart',
-				'type'       => 'switcher',
-				'title'      => esc_html__( 'Cart', 'healthnews' ),
 				'text_on'    => esc_html__( 'Yes', 'healthnews' ),
 				'text_off'   => esc_html__( 'No', 'healthnews' ),
 				'text_width' => 80,
@@ -231,77 +249,6 @@ if ( class_exists( 'CSF' ) ) {
 	) );
 
 	//
-	//  Create a section shop
-	CSF::createSection( $healthnews_prefix, array(
-		'id'    => 'opt_shop_section',
-		'title'  => esc_html__( 'Shop', 'healthnews' ),
-		'icon'   => 'fas fa-shopping-cart',
-	) );
-
-	// Category product
-	CSF::createSection( $healthnews_prefix, array(
-		'parent' => 'opt_shop_section',
-		'title'  => esc_html__( 'Category', 'healthnews' ),
-		'description' => esc_html__( 'Use for shop category and tag', 'healthnews' ),
-		'fields' => array(
-			// Sidebar
-			array(
-				'id'      => 'opt_shop_cat_sidebar_position',
-				'type'    => 'select',
-				'title'   => esc_html__( 'Sidebar position', 'healthnews' ),
-				'options' => array(
-					'hide'  => esc_html__( 'Hide', 'healthnews' ),
-					'left'  => esc_html__( 'Left', 'healthnews' ),
-					'right' => esc_html__( 'Right', 'healthnews' ),
-				),
-				'default' => 'left'
-			),
-
-			// Limit
-			array(
-				'id'      => 'opt_shop_cat_limit',
-				'type'    => 'number',
-				'title'   => esc_html__( 'Limit Product', 'healthnews' ),
-				'default' => 12,
-			),
-
-			// Per Row
-			array(
-				'id'      => 'opt_shop_cat_per_row',
-				'type'    => 'select',
-				'title'   => esc_html__( 'Products Per Row', 'healthnews' ),
-				'options' => array(
-					'3' => esc_html__( '3 Column', 'healthnews' ),
-					'4' => esc_html__( '4 Column', 'healthnews' ),
-					'5' => esc_html__( '5 Column', 'healthnews' ),
-				),
-				'default' => '4'
-			),
-		)
-	) );
-
-	// Single product
-	CSF::createSection( $healthnews_prefix, array(
-		'parent' => 'opt_shop_section',
-		'title'  => esc_html__( 'Single', 'healthnews' ),
-		'description' => esc_html__( 'Use for single product', 'healthnews' ),
-		'fields' => array(
-			// Sidebar
-			array(
-				'id'      => 'opt_shop_single_sidebar_position',
-				'type'    => 'select',
-				'title'   => esc_html__( 'Sidebar position', 'healthnews' ),
-				'options' => array(
-					'hide'  => esc_html__( 'Hide', 'healthnews' ),
-					'left'  => esc_html__( 'Left', 'healthnews' ),
-					'right' => esc_html__( 'Right', 'healthnews' ),
-				),
-				'default' => 'left'
-			)
-		)
-	) );
-
-	//
 	// -> Create a section footer
 	CSF::createSection( $healthnews_prefix, array(
 		'id'    => 'opt_footer_section',
@@ -371,33 +318,6 @@ if ( class_exists( 'CSF' ) ) {
 				'min'        => 1,
 				'max'        => 12,
 				'dependency' => array( 'opt_footer_columns', 'not-any', '0,1,2,3' )
-			),
-		)
-	) );
-
-	// Copyright
-	CSF::createSection( $healthnews_prefix, array(
-		'parent' => 'opt_footer_section',
-		'title'  => esc_html__( 'Copyright', 'healthnews' ),
-		'fields' => array(
-			// show
-			array(
-				'id'         => 'opt_footer_copyright_show',
-				'type'       => 'switcher',
-				'title'      => esc_html__( 'Show copyright', 'healthnews' ),
-				'text_on'    => esc_html__( 'Yes', 'healthnews' ),
-				'text_off'   => esc_html__( 'No', 'healthnews' ),
-				'text_width' => 80,
-				'default'    => true
-			),
-
-			// content
-			array(
-				'id'      => 'opt_footer_copyright_content',
-				'type'    => 'wp_editor',
-				'title'   => esc_html__( 'Content', 'healthnews' ),
-				'media_buttons' => false,
-				'default' => esc_html__( 'Copyright &copy; DiepLK', 'healthnews' )
 			),
 		)
 	) );
