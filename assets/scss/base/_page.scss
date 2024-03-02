@@ -1,0 +1,17 @@
+.site-container {
+  padding: 50px 0;
+
+  &.site-container-elementor {
+    padding: 0;
+  }
+}
+
+.site-page-content {
+  p {
+    &:after {
+      display: table;
+      clear: both;
+      content: '';
+    }
+  }
+}

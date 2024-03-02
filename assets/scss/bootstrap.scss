@@ -1,0 +1,91 @@
+@import "variables-site/variables";
+
+// Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "../../node_modules/bootstrap/scss/functions";
+
+// Include any default variable overrides here
+
+// body
+$body-bg: $background-body;
+$body-color: $body-color;
+$body-text-align: inherit;
+
+// stylelint-enable value-keyword-case
+$font-family-sans-serif: $font-primary;
+$font-family-monospace: $font-primary;
+$font-family-base: $font-primary;
+$font-size-base: $font-size-body;
+$line-height-base: $line-height-body;
+
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+$grid-gutter-width: 2.4rem;
+
+// Links
+//
+// Style anchor elements.
+$link-color: $body-color;
+$link-hover-color: $color-hover;
+$link-decoration: none;
+
+// scss-docs-end caret-variables
+$transition-base: all 0.4s ease-in-out;
+
+// font size
+$h1-font-size: $h1-font-size;
+$h2-font-size: $h2-font-size;
+$h3-font-size: $h3-font-size;
+$h4-font-size: $h4-font-size;
+$h5-font-size: $h5-font-size;
+$h6-font-size: $h6-font-size;
+
+// headings-variables
+$headings-color: $heading-color;
+$headings-font-family: $heading-font-family;
+$headings-margin-bottom: 1.2rem;
+$headings-font-weight: 700;
+$headings-line-height: 1.25;
+
+
+// Paragraphs
+//
+// Style p element.
+$paragraph-margin-bottom: 1.2rem;
+
+// Navs
+// scss-docs-start nav-variables
+$nav-link-font-size: $font-size-base;
+$nav-link-font-weight: 400;
+
+// scss-docs-start container-max-widths
+$container-max-widths: (
+        xl: 1224px
+) !default;
+
+// Include remainder of required Bootstrap stylesheets
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/variables-dark";
+@import "../../node_modules/bootstrap/scss/maps";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/utilities";
+
+// Include any optional Bootstrap components as you like
+@import "../../node_modules/bootstrap/scss/root";
+@import "../../node_modules/bootstrap/scss/reboot";
+@import "../../node_modules/bootstrap/scss/type";
+@import "../../node_modules/bootstrap/scss/images";
+@import "../../node_modules/bootstrap/scss/containers";
+@import "../../node_modules/bootstrap/scss/grid";
+@import "../../node_modules/bootstrap/scss/transitions";
+@import "../../node_modules/bootstrap/scss/nav";
+@import "../../node_modules/bootstrap/scss/navbar";
+@import "../../node_modules/bootstrap/scss/close";
+@import "../../node_modules/bootstrap/scss/modal";
+
+// Helpers
+@import "../../node_modules/bootstrap/scss/helpers";
+
+// Utilities
+@import "../../node_modules/bootstrap/scss/utilities/api";
+// scss-docs-end import-stack

@@ -1,0 +1,47 @@
+@import "../../variables-site/variables";
+
+.single-post-content {
+  &__image,
+  .page-links {
+    margin-bottom: 30px;
+  }
+
+  &__title {
+    margin-bottom: 1.6rem;
+  }
+
+  &__detail {
+    margin-bottom: 15px;
+  }
+
+  &__tax {
+    margin-bottom: 20px;
+  }
+
+  .post-meta {
+    margin-bottom: 15px;
+  }
+}
+
+.related-posts {
+  &__title {
+    position: relative;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+
+    &:after {
+      position: absolute;
+      content: "";
+      left: 0;
+      bottom: 0;
+      width: 30px;
+      height: 1px;
+      background-color: $background-hover;
+    }
+  }
+
+  .item {
+    margin-bottom: 15px;
+  }
+}

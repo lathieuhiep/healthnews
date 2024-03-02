@@ -1,0 +1,18 @@
+.global-footer {
+  section {
+    &.widget {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__column {
+    border-top: 1px solid $border-color;
+    padding: 30px 0;
+  }
+
+  &__bottom {
+    padding: 10px 0;
+    color: $color-white;
+    background-color: $body-color;
+  }
+}

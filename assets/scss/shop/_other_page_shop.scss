@@ -1,0 +1,136 @@
+.woocommerce-cart {
+  table {
+    &.cart {
+      td {
+        &.actions {
+          .coupon {
+            .input-text {
+              width: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.woocommerce,
+.woocommerce-page {
+  .col2-set {
+    margin: 0 -12px;
+    flex-flow: wrap;
+
+    .col-1,
+    .col-2 {
+      padding: 0 12px;
+      flex: 0 0 50%;
+      max-width: 50%;
+      width: 100%;
+    }
+  }
+
+  form {
+    .form-row {
+      label {
+        width: 100%;
+      }
+
+      .input-text,
+      .select2-container {
+        border: 1px solid #eeeeee;
+        padding: 10px 15px;
+      }
+
+      span {
+        &.woocommerce-input-wrapper {
+          display: block;
+          width: 100%;
+
+          textarea {
+            &.input-text {
+              height: 150px;
+            }
+          }
+
+          .select2-container--default {
+            .select2-selection--single {
+              border: none;
+              border-radius: 0;
+
+              .select2-selection__rendered {
+                line-height: inherit;
+                padding: 0;
+              }
+
+              .select2-selection__arrow {
+                top: 50%;
+                transform: translateY(-50%);
+              }
+            }
+          }
+        }
+      }
+
+      &.place-order {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  }
+
+  #payment {
+    #place_order {
+      background-color: #000000;
+
+      &:hover {
+        background-color: $background-hover;
+      }
+    }
+  }
+}
+
+#order_review_heading {
+  margin: 15px 0 15px;
+}
+
+.woocommerce-info,
+.woocommerce-message {
+  border-top-color: $background-hover;
+
+  &::before {
+    color: $color-hover;
+  }
+}
+
+.woocommerce {
+  #respond input#submit,
+  a.button,
+  button.button,
+  input.button {
+    display: inline-block;
+    width: auto;
+    padding: 9px 22px;
+    color: #000000;
+    background-color: #eeeeee;
+    border: none;
+    font-weight: 400;
+    @include transition();
+
+    &:hover {
+      color: #ffffff;
+      background-color: $background-hover;
+    }
+  }
+
+  #review_form {
+    #respond {
+      label {
+        display: block;
+      }
+
+      p {
+        display: inline-block;
+      }
+    }
+  }
+}

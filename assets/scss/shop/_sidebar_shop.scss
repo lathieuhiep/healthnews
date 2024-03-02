@@ -1,0 +1,133 @@
+section {
+  &.widget {
+    &.woocommerce {
+      ul {
+        &.product_list_widget {
+          li {
+            a {
+              margin-bottom: 15px;
+              display: flex;
+
+              img {
+                width: 70px;
+                margin: 0 15px 0 0;
+                flex: 0 0 auto;
+              }
+
+              .product-title {
+                flex: 1;
+              }
+            }
+
+            .star-rating {
+              margin-bottom: 10px;
+            }
+          }
+        }
+      }
+
+      &.widget_price_filter {
+        .ui-slider-horizontal {
+          height: 2px;
+          background-color: $background-hover;
+        }
+
+        .ui-slider {
+          .ui-slider-range {
+            background-color: $background-hover;
+          }
+
+          .ui-slider-handle {
+            top: -6px;
+            background-color: #ffffff;
+            border: 1px solid #e45914;
+            border-radius: 0;
+          }
+        }
+
+        .price_slider_amount {
+          margin-top: 30px;
+
+          .button {
+            color: #ffffff;
+            background-color: $background-hover;
+            box-shadow: none;
+            border: none;
+            padding: 10px 15px;
+            font-weight: normal;
+          }
+
+          .price_label {
+            font-size: 14px;
+            color: #000000;
+          }
+        }
+      }
+
+      &.widget_rating_filter {
+        ul {
+          li {
+            padding-top: 10px;
+            padding-bottom: 10px;
+          }
+        }
+      }
+
+      ul {
+        li {
+          margin-bottom: 10px;
+          padding-bottom: 10px;
+
+          &:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+          }
+
+          a {
+            display: inline-block;
+          }
+        }
+      }
+
+      .woocommerce-widget-layered-nav-list {
+        .woocommerce-widget-layered-nav-list__item {
+          padding-bottom: 10px;
+
+          &:last-child {
+            padding-bottom: 0;
+          }
+        }
+      }
+    }
+
+    .woocommerce-product-search {
+      display: flex;
+
+      label {
+        &.screen-reader-text {
+          display: none;
+        }
+      }
+
+      .search-field {
+        border: 1px solid $border-color;
+        height: auto;
+        padding: 9px 10px;
+        cursor: pointer;
+        border-radius: 3px;
+        box-shadow: none;
+        flex: 1 auto;
+      }
+
+      button[type=submit] {
+        background-color: $color-hover;
+        color: #fff;
+        padding: 9px 10px;
+        border: none;
+        margin-left: 5px;
+        border-radius: 3px;
+        @include transition();
+      }
+    }
+  }
+}

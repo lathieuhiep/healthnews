@@ -1,0 +1,30 @@
+.element-post-grid {
+  .title {
+    text-align: center;
+  }
+
+  .item-post {
+    margin-bottom: 3rem;
+
+    &__thumbnail {
+      margin-bottom: 1.5rem;
+
+      a {
+        display: block;
+      }
+    }
+
+    &__title {
+      font-size: 1.8rem;
+    }
+
+    &__content {
+      margin-top: 1.5rem;
+
+      p {
+        margin: 0;
+        font-size: 1.4rem;
+      }
+    }
+  }
+}

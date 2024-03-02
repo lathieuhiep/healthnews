@@ -1,0 +1,60 @@
+form {
+  &.wpcf7-form {
+    p {
+      position: relative;
+      margin: 0;
+
+      span {
+        &.ajax-loader {
+          position: absolute;
+          top: 8px;
+        }
+      }
+    }
+
+    label {
+      display: block;
+      margin-bottom: 15px;
+      font-weight: 500;
+    }
+
+    span {
+      &.required {
+        color: $color-hover;
+      }
+
+      &.wpcf7-form-control-wrap {
+        display: block;
+        margin-bottom: 15px;
+
+        input,
+        textarea {
+          height: auto;
+          width: 100%;
+          display: block;
+          border: 1px solid #e9ebed;
+          background-color: #f8f8f8;
+          padding: 4px 12px;
+          color: #202020;
+
+          &:focus {
+            border-color: #ff335f;
+          }
+        }
+
+        textarea {
+          height: 100px;
+        }
+      }
+    }
+
+    .wpcf7-submit {
+      color: #fff;
+      padding: 5px 25px;
+      border: none;
+      cursor: pointer;
+      text-transform: uppercase;
+      background: $background-primary;
+    }
+  }
+}

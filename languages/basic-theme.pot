@@ -1,0 +1,952 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Text in function
+#: basictheme/functions.php:716
+msgid " Previous"
+msgstr ""
+
+#. Text in function
+#: basictheme/functions.php:716
+msgid "&nbsp;"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/post-grid.php:1
+msgid "1 Column"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/post-grid.php:1
+msgid "2 Column"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/post-grid.php:1
+msgid "3 Column"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/post-grid.php:1
+msgid "4 Column"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/widgets/recent-post.php:1
+msgid "A widget show post"
+msgstr ""
+
+#. Text in echo
+#: basictheme/template-parts/footer/inc-copyright.php:35
+#: basictheme/template-parts/navigation/inc-nav-top.php:47
+msgid "ADD TO MENU"
+msgstr ""
+
+#. Text in echo
+#: basictheme/extension/widgets/recent-post.php:187
+msgid "ASC"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/about-text.php:1
+msgid "About Text"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/about-text.php:1
+msgid "Alignment Title"
+msgstr ""
+
+#. Text in echo
+#: basictheme/extension/widgets/recent-post.php:159
+msgid "All Category"
+msgstr ""
+
+#. Text in function
+#: basictheme/plugins/class-tgm-plugin-activation.php:1
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Arrows"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Arrows Color"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Arrows Color Hover"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Arrows Size"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/post-carousel.php:1
+#: basictheme/extension/elementor/widgets/post-grid.php:1
+msgid "Ascending"
+msgstr ""
+
+#. Text in function
+#: basictheme/functions.php:638
+msgid "Author:"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/post-carousel.php:1
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Autoplay?"
+msgstr ""
+
+#. Text in echo
+#: basictheme/404.php:39
+msgid "Awww...Do Not Cry"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Background"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Background Color"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Background Overlay"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Border Color"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Border Radius"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Border Width"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Bottom"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Button"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Button Text"
+msgstr ""
+
+#. Text in echo
+#: basictheme/template-parts/post/content-single.php:47
+msgid "Category: "
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/about-text.php:1
+#: basictheme/extension/elementor/widgets/post-carousel.php:1
+#: basictheme/extension/elementor/widgets/post-grid.php:1
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Center"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Click Here"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Click edit button to change this text. Lorem ipsum dolor sit amet consectetur adipiscing elit dolor"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/post-carousel.php:1
+#: basictheme/extension/elementor/widgets/post-grid.php:1
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Color"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/post-carousel.php:1
+#: basictheme/extension/elementor/widgets/post-grid.php:1
+msgid "Color & Typography"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/post-carousel.php:1
+#: basictheme/extension/elementor/widgets/post-grid.php:1
+msgid "Color Hover"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/post-grid.php:1
+msgid "Column"
+msgstr ""
+
+#. Text in function
+#: basictheme/comments.php:94
+#: basictheme/functions.php:649
+msgid "Comment"
+msgstr ""
+
+#. Text in echo
+#: basictheme/functions.php:406
+msgid "Comment navigation"
+msgstr ""
+
+#. Text in function
+#: basictheme/functions.php:649
+msgid "Comments"
+msgstr ""
+
+#. Text in echo
+#: basictheme/comments.php:89
+msgid "Comments are closed."
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Content"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Content Width"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Custom"
+msgstr ""
+
+#. Text in echo
+#: basictheme/extension/widgets/recent-post.php:191
+msgid "DESC"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/post-carousel.php:1
+#: basictheme/extension/elementor/widgets/post-grid.php:1
+#: basictheme/extension/widgets/recent-post.php:208
+msgid "Date"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/about-text.php:1
+msgid "Default description"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/post-carousel.php:1
+#: basictheme/extension/elementor/widgets/post-grid.php:1
+msgid "Descending"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/about-text.php:1
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Description"
+msgstr ""
+
+#. Text in function
+#: basictheme/plugins/class-tgm-plugin-activation.php:1
+msgid "Dismiss this notice"
+msgstr ""
+
+#. Text in function
+#: basictheme/functions.php:716
+msgid "Display footer column 1 on all page."
+msgstr ""
+
+#. Text in function
+#: basictheme/functions.php:716
+msgid "Display footer column 2 on all page."
+msgstr ""
+
+#. Text in function
+#: basictheme/functions.php:716
+msgid "Display footer column 3 on all page."
+msgstr ""
+
+#. Text in function
+#: basictheme/functions.php:716
+msgid "Display footer column 4 on all page."
+msgstr ""
+
+#. Text in function
+#: basictheme/functions.php:716
+msgid "Display sidebar on page shop."
+msgstr ""
+
+#. Text in function
+#: basictheme/functions.php:716
+msgid "Display sidebar right or left on all page."
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Dots"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Dots Color"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Dots Color Hover"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Dots Size"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/post-carousel.php:1
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Dots Slider"
+msgstr ""
+
+#. Text in function
+#: basictheme/functions.php:343
+msgid "Edit "
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/post-carousel.php:1
+#: basictheme/extension/elementor/widgets/post-grid.php:1
+msgid "Excerpt Alignment"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/post-carousel.php:1
+#: basictheme/extension/elementor/widgets/post-grid.php:1
+msgid "Excerpt Post"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/post-carousel.php:1
+#: basictheme/extension/elementor/widgets/post-grid.php:1
+msgid "Excerpt Words"
+msgstr ""
+
+#. Text in function
+#: basictheme/comments.php:94
+msgid "Full Name"
+msgstr ""
+
+#. Text in function
+#: basictheme/404.php:55
+#: basictheme/404.php:56
+msgid "Go to the Home Page"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Height"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/about-text.php:1
+msgid "Hide Line"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Horizontal Position"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Hover"
+msgstr ""
+
+#. Text in echo
+#: basictheme/extension/widgets/recent-post.php:204
+msgid "ID"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/about-text.php:1
+msgid "Icon"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Image"
+msgstr ""
+
+#. Text in function
+#: basictheme/plugins/class-tgm-plugin-activation.php:1
+msgid "Install Plugins"
+msgstr ""
+
+#. Text in function
+#: basictheme/plugins/class-tgm-plugin-activation.php:1
+msgid "Install Required Plugins"
+msgstr ""
+
+#. Text in function
+#: basictheme/plugins/class-tgm-plugin-activation.php:1
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#. Text in echo
+#: basictheme/404.php:45
+msgid "It is just a 404 Error!"
+msgstr ""
+
+#. Text in echo
+#: basictheme/template-parts/search/content-search-no-data.php:25
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/post-carousel.php:1
+#: basictheme/extension/elementor/widgets/post-grid.php:1
+msgid "Justified"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/post-carousel.php:1
+#: basictheme/extension/elementor/widgets/post-grid.php:1
+msgid "Layout Settings"
+msgstr ""
+
+#. Text in function
+#: basictheme/comments.php:94
+msgid "Leave a comment"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/about-text.php:1
+#: basictheme/extension/elementor/widgets/post-carousel.php:1
+#: basictheme/extension/elementor/widgets/post-grid.php:1
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Left"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Link"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/post-carousel.php:1
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Loop Slider ?"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/about-text.php:1
+msgid "Margin Bottom Line"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/post-carousel.php:1
+msgid "Margin Item Desktop"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/post-carousel.php:1
+msgid "Margin Item Mobile"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Middle"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/post-carousel.php:1
+msgid "Nav Slider"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Navigation"
+msgstr ""
+
+#. Text in function
+#: basictheme/functions.php:410
+msgid "Newer Comments"
+msgstr ""
+
+#. Text in function
+#: basictheme/functions.php:716
+msgid "Next"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/about-text.php:1
+#: basictheme/extension/elementor/widgets/post-carousel.php:1
+#: basictheme/extension/elementor/widgets/post-grid.php:1
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "No"
+msgstr ""
+
+#. Text in echo
+#: basictheme/template-parts/search/content-search-no-data.php:3
+msgid "No Data"
+msgstr ""
+
+#. Text in function
+#: basictheme/plugins/class-tgm-plugin-activation.php:1
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Normal"
+msgstr ""
+
+#. Text in echo
+#: basictheme/extension/widgets/social-widget.php:75
+msgid "Note: Set your social links in the basictheme Options"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/post-carousel.php:1
+msgid "Number of Item Desktop"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/post-carousel.php:1
+msgid "Number of Item Mobile"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/post-carousel.php:1
+msgid "Number of Item Tablet"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/post-carousel.php:1
+#: basictheme/extension/elementor/widgets/post-grid.php:1
+msgid "Number of Posts"
+msgstr ""
+
+#. Text in echo
+#: basictheme/extension/widgets/recent-post.php:224
+msgid "Number of posts to show:"
+msgstr ""
+
+#. Text in function
+#: basictheme/functions.php:410
+msgid "Older Comments"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/post-carousel.php:1
+#: basictheme/extension/elementor/widgets/post-grid.php:1
+msgid "Order"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/post-carousel.php:1
+#: basictheme/extension/elementor/widgets/post-grid.php:1
+msgid "Order By"
+msgstr ""
+
+#. Text in echo
+#: basictheme/extension/widgets/recent-post.php:199
+msgid "Order:"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Padding"
+msgstr ""
+
+#. Text in function
+#: basictheme/functions.php:716
+msgid "Pages:"
+msgstr ""
+
+#. Text in function
+#: basictheme/plugins/class-tgm-plugin-activation.php:1
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#. Text in function
+#: basictheme/plugins/class-tgm-plugin-activation.php:1
+msgid "Plugin activated successfully."
+msgstr ""
+
+#. Text in function
+#: basictheme/plugins/class-tgm-plugin-activation.php:1
+msgid "Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin."
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/post-carousel.php:1
+#: basictheme/extension/elementor/widgets/post-grid.php:1
+msgid "Post Author"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/post-carousel.php:1
+#: basictheme/extension/elementor/widgets/post-grid.php:1
+msgid "Post ID"
+msgstr ""
+
+#. Text in echo
+#: basictheme/functions.php:645
+msgid "Post date: "
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/post-carousel.php:1
+msgid "Posts Carousel"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/post-grid.php:1
+msgid "Posts Grid"
+msgstr ""
+
+#. Text in function
+#: basictheme/functions.php:716
+msgid "Previous"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/post-carousel.php:1
+#: basictheme/extension/elementor/widgets/post-grid.php:1
+msgid "Query"
+msgstr ""
+
+#. Text in echo
+#: basictheme/extension/widgets/recent-post.php:216
+msgid "Rand"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/post-carousel.php:1
+#: basictheme/extension/elementor/widgets/post-grid.php:1
+msgid "Random"
+msgstr ""
+
+#. Text in function
+#: basictheme/template-parts/archive/content-archive-info.php:32
+msgid "Read more"
+msgstr ""
+
+#. Text in function
+#: basictheme/template-parts/search/content-search-no-data.php:11
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#. Text in echo
+#: basictheme/template-parts/post/inc-related-post.php:27
+msgid "Related Post"
+msgstr ""
+
+#. Text in function
+#: basictheme/plugins/class-tgm-plugin-activation.php:1
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#. Text in function
+#: basictheme/plugins/class-tgm-plugin-activation.php:1
+msgid "Return to the Dashboard"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/about-text.php:1
+#: basictheme/extension/elementor/widgets/post-carousel.php:1
+#: basictheme/extension/elementor/widgets/post-grid.php:1
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Right"
+msgstr ""
+
+#. Text in echo
+#: basictheme/extension/widgets/recent-post.php:153
+msgid "Select Categories:"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/post-carousel.php:1
+#: basictheme/extension/elementor/widgets/post-grid.php:1
+msgid "Select Category"
+msgstr ""
+
+#. Text in echo
+#: basictheme/extension/elementor/controls/box-icon.php:49
+#: basictheme/extension/elementor/controls/box-icon.php:50
+msgid "Select Icon"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Set custom style that will only affect this specific slide."
+msgstr ""
+
+#. Text in echo
+#: basictheme/functions.php:668
+msgid "Share this post:"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/post-carousel.php:1
+#: basictheme/extension/elementor/widgets/post-grid.php:1
+msgid "Show excerpt"
+msgstr ""
+
+#. Text in function
+#: basictheme/functions.php:716
+msgid "Sidebar Footer Multi Column 1"
+msgstr ""
+
+#. Text in function
+#: basictheme/functions.php:716
+msgid "Sidebar Footer Multi Column 2"
+msgstr ""
+
+#. Text in function
+#: basictheme/functions.php:716
+msgid "Sidebar Footer Multi Column 3"
+msgstr ""
+
+#. Text in function
+#: basictheme/functions.php:716
+msgid "Sidebar Footer Multi Column 4"
+msgstr ""
+
+#. Text in function
+#: basictheme/functions.php:716
+msgid "Sidebar Main"
+msgstr ""
+
+#. Text in function
+#: basictheme/functions.php:716
+msgid "Sidebar Woocommerce"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Slide Heading"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Slider 1 Heading"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Slider 2 Heading"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Slider Options"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Slides"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Slides Theme"
+msgstr ""
+
+#. Text in function
+#: basictheme/plugins/class-tgm-plugin-activation.php:1
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#. Text in echo
+#: basictheme/template-parts/search/content-search-no-data.php:17
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Spacing"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Style"
+msgstr ""
+
+#. Text in echo
+#: basictheme/template-parts/post/content-single.php:47
+msgid "Tag: "
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/about-text.php:1
+msgid "Text"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Text Align"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Text Color"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/about-text.php:1
+msgid "Text Editor"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/about-text.php:1
+msgid "Text Editor Color"
+msgstr ""
+
+#. Text in function
+#: basictheme/plugins/class-tgm-plugin-activation.php:1
+msgid "The following plugin was activated successfully:"
+msgstr ""
+
+#. Text in function
+#: basictheme/plugins/class-tgm-plugin-activation.php:1
+msgid "There are one or more required or recommended plugins to install, update or activate."
+msgstr ""
+
+#. Text in function
+#: basictheme/plugins/class-tgm-plugin-activation.php:1
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/about-text.php:1
+#: basictheme/extension/elementor/widgets/post-carousel.php:1
+#: basictheme/extension/elementor/widgets/post-grid.php:1
+#: basictheme/extension/elementor/widgets/slides.php:1
+#: basictheme/extension/widgets/recent-post.php:212
+msgid "Title"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Title & Description"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/about-text.php:1
+msgid "Title About Text"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/post-carousel.php:1
+#: basictheme/extension/elementor/widgets/post-grid.php:1
+msgid "Title Alignment"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/about-text.php:1
+msgid "Title Color"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/post-carousel.php:1
+#: basictheme/extension/elementor/widgets/post-grid.php:1
+msgid "Title Post"
+msgstr ""
+
+#. Text in echo
+#: basictheme/extension/widgets/recent-post.php:144
+#: basictheme/extension/widgets/social-widget.php:68
+msgid "Title:"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Top"
+msgstr ""
+
+#. Text in function
+#: basictheme/plugins/class-tgm-plugin-activation.php:1
+msgid "Update Required"
+msgstr ""
+
+#. Text in function
+#: basictheme/plugins/class-tgm-plugin-activation.php:1
+msgid "Updating Plugin: %s"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Vertical Position"
+msgstr ""
+
+#. Text in echo
+#: basictheme/extension/woocommerce/woo-template-functions.php:57
+msgid "View your shopping cart"
+msgstr ""
+
+#. Text in echo
+#: basictheme/404.php:47
+msgid "What you are looking for may have been misplaced"
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/about-text.php:1
+#: basictheme/extension/elementor/widgets/post-carousel.php:1
+#: basictheme/extension/elementor/widgets/post-grid.php:1
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "Yes"
+msgstr ""
+
+#. Text in function
+#: basictheme/comments.php:94
+msgid "Your Email"
+msgstr ""
+
+#. Text in echo
+#: basictheme/functions.php:330
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "https://your-link.com"
+msgstr ""
+
+#. Text in echo
+#: basictheme/404.php:49
+msgid "in Long Term Memory."
+msgstr ""
+
+#. Text in echo
+#: basictheme/template-parts/inc-loading.php:16
+#: basictheme/template-parts/inc-loading.php:20
+msgid "loading..."
+msgstr ""
+
+#. Text in function
+#: basictheme/extension/elementor/widgets/slides.php:1
+msgid "nav Slider"
+msgstr ""

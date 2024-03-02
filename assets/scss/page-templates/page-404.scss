@@ -1,0 +1,38 @@
+@import "../variables-site/variables";
+
+.site-error {
+  height: 100vh;
+  padding: 30px;
+  background-color: #222;
+  @include flex-center;
+
+  &__content {
+    max-width: 460px;
+    text-align: center;
+    color: #ffffff;
+
+    .heading {
+      font-size: 16rem;
+      color: #222;
+      line-height: 1;
+      text-shadow: 2px 2px 0 #c9c9c9, -2px -2px 0 #c9c9c9;
+    }
+
+    p {
+      color: #c9c9c9;
+    }
+
+    a {
+      display: inline-block;
+      padding: 10px 25px;
+      color: #c9c9c9;
+      text-transform: uppercase;
+      border: 2px solid #c9c9c9;
+
+      &:hover {
+        color: #ffab00;
+        border-color: #ffab00;
+      }
+    }
+  }
+}

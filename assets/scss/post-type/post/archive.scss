@@ -1,0 +1,152 @@
+@import "../../variables-site/variables";
+
+.content-archive-post {
+  display: grid;
+  grid-gap: 2.4rem;
+
+  .item {
+    &__content {
+      padding: 25px 15px 15px;
+      border: 1px solid $border-color;
+    }
+  }
+
+  .post-title {
+    font-size: 2rem;
+
+    a {
+      color: $heading-color;
+
+      i {
+        margin-right: 5px;
+        color: $color-hover;
+      }
+
+      &:hover {
+        color: $color-hover;
+      }
+    }
+  }
+
+  .post-thumbnail {
+    margin-bottom: 10px;
+  }
+
+  .post-desc {
+    ul {
+      li {
+        margin-bottom: 10px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    table {
+      margin-bottom: 30px;
+      width: 100%;
+
+      tr {
+        border-bottom: 1px solid $border-color;
+
+        th {
+          padding: 10px 20px 10px 0;
+        }
+      }
+    }
+
+    dd {
+      margin: 0 0 20px;
+    }
+
+    &:after {
+      display: table;
+      clear: both;
+      content: '';
+    }
+  }
+
+  .post-meta {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+
+    span {
+      display: inline-block;
+      margin-right: 5px;
+
+      &:after {
+        display: inline-block;
+        content: '/';
+        margin-left: 10px;
+        margin-right: 0;
+      }
+
+      &:last-child {
+        &:after {
+          display: none;
+        }
+      }
+
+      a {
+        color: $color-hover;
+
+        &:hover {
+          color: $body-color;
+        }
+      }
+    }
+  }
+
+  .page-links {
+    font-weight: 700;
+
+    a {
+      display: inline-block;
+
+      span {
+        display: inline-block;
+        padding: 0 5px;
+      }
+    }
+  }
+
+  @media (min-width: 1200px) {
+    &.grid-sidebar-col-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    &.grid-sidebar-col-4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  @media (min-width: 992px) {
+    &.grid-col-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    &.grid-col-4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1199px) {
+    &.grid-sidebar-col-3,
+    &.grid-sidebar-col-4 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 768px) and ( max-width: 991px ) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: 576px) and ( max-width: 767px ) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 575px) {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,21 @@
+.element-testimonial-slider {
+  .item {
+    &__image {
+      width: 150px;
+      margin: 0 auto 12px;
+    }
+
+    &__content {
+      > div {
+        &:not(:last-child) {
+          margin-bottom: 12px;
+        }
+      }
+
+      .name {
+        font-size: 18px;
+        font-weight: 700;
+      }
+    }
+  }
+}

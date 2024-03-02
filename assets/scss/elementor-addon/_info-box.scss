@@ -1,0 +1,38 @@
+.element-info-box {
+  display: flex;
+
+  &__icon {
+    flex: 0 0 auto;
+
+    .icon-box {
+      i, svg {
+        @include transition();
+      }
+    }
+  }
+
+  &__content {
+    flex: 1;
+  }
+
+  &.icon-on-top {
+    flex-direction: column;
+  }
+
+  &.icon-on-right {
+    text-align: right;
+    flex-direction: row-reverse;
+  }
+}
+
+.infobox-content-align-center {
+  .element-info-box {
+    text-align: center;
+  }
+}
+
+.infobox-content-align-right {
+  .element-info-box {
+    text-align: right;
+  }
+}
