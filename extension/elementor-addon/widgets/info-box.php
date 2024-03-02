@@ -18,11 +18,11 @@ class BasicTheme_Elementor_Info_Box extends Widget_Base {
 	}
 
 	public function get_name(): string {
-		return 'basictheme-info-box';
+		return 'healthnews-info-box';
 	}
 
 	public function get_title(): string {
-		return esc_html__( 'Info box', 'basictheme' );
+		return esc_html__( 'Info box', 'healthnews' );
 	}
 
 	public function get_icon(): string {
@@ -35,7 +35,7 @@ class BasicTheme_Elementor_Info_Box extends Widget_Base {
 		$this->start_controls_section(
 			'image_section',
 			[
-				'label' => esc_html__( 'Image', 'basictheme' ),
+				'label' => esc_html__( 'Image', 'healthnews' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -43,14 +43,14 @@ class BasicTheme_Elementor_Info_Box extends Widget_Base {
 		$this->add_control(
 			'img_type',
 			[
-				'label' => esc_html__('Infobox Type', 'basictheme'),
+				'label' => esc_html__('Infobox Type', 'healthnews'),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'img-on-top',
 				'label_block' => false,
 				'options' => [
-					'img-on-top' => esc_html__('Image/Icon On Top', 'basictheme'),
-					'img-on-left' => esc_html__('Image/Icon On Left', 'basictheme'),
-					'img-on-right' => esc_html__('Image/Icon On Right', 'basictheme'),
+					'img-on-top' => esc_html__('Image/Icon On Top', 'healthnews'),
+					'img-on-left' => esc_html__('Image/Icon On Left', 'healthnews'),
+					'img-on-right' => esc_html__('Image/Icon On Right', 'healthnews'),
 				],
 			]
 		);
@@ -58,22 +58,22 @@ class BasicTheme_Elementor_Info_Box extends Widget_Base {
 		$this->add_control(
 			'img_or_icon',
 			[
-				'label' => esc_html__('Image or Icon', 'basictheme'),
+				'label' => esc_html__('Image or Icon', 'healthnews'),
 				'type' => Controls_Manager::CHOOSE,
 				'label_block' => true,
 				'options' => [
 					'none' => [
-						'title' => esc_html__('None', 'basictheme'),
+						'title' => esc_html__('None', 'healthnews'),
 						'icon' => 'fa fa-ban',
 					],
 					
 					'icon' => [
-						'title' => esc_html__('Icon', 'basictheme'),
+						'title' => esc_html__('Icon', 'healthnews'),
 						'icon' => 'fa fa-info-circle',
 					],
 					
 					'img' => [
-						'title' => esc_html__('Image', 'basictheme'),
+						'title' => esc_html__('Image', 'healthnews'),
 						'icon' => 'eicon-image-bold',
 					],
 				],
@@ -84,7 +84,7 @@ class BasicTheme_Elementor_Info_Box extends Widget_Base {
 		$this->add_control(
 			'icon_vertical_position',
 			[
-				'label' => esc_html__('Icon Position', 'basictheme'),
+				'label' => esc_html__('Icon Position', 'healthnews'),
 				'type' => Controls_Manager::CHOOSE,
 				'default' => 'top',
 				'condition' => [
@@ -92,15 +92,15 @@ class BasicTheme_Elementor_Info_Box extends Widget_Base {
 				],
 				'options' => [
 					'top' => [
-						'title' => esc_html__('Top', 'basictheme'),
+						'title' => esc_html__('Top', 'healthnews'),
 						'icon' => 'eicon-v-align-top',
 					],
 					'middle' => [
-						'title' => esc_html__('Middle', 'basictheme'),
+						'title' => esc_html__('Middle', 'healthnews'),
 						'icon' => 'eicon-v-align-middle',
 					],
 					'bottom' => [
-						'title' => esc_html__('Bottom', 'basictheme'),
+						'title' => esc_html__('Bottom', 'healthnews'),
 						'icon' => 'eicon-v-align-bottom',
 					],
 				],
@@ -121,7 +121,7 @@ class BasicTheme_Elementor_Info_Box extends Widget_Base {
 		$this->add_control(
 			'selected_image',
 			[
-				'label' => esc_html__('Infobox Image', 'basictheme'),
+				'label' => esc_html__('Infobox Image', 'healthnews'),
 				'type' => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => Utils::get_placeholder_image_src(),
@@ -138,7 +138,7 @@ class BasicTheme_Elementor_Info_Box extends Widget_Base {
 		$this->add_control(
 			'selected_icon',
 			[
-				'label' => esc_html__('Icon', 'basictheme'),
+				'label' => esc_html__('Icon', 'healthnews'),
 				'type' => Controls_Manager::ICONS,
 				'fa4compatibility' => 'icon',
 				'default' => [
@@ -157,40 +157,40 @@ class BasicTheme_Elementor_Info_Box extends Widget_Base {
 		$this->start_controls_section(
 			'content_section',
 			[
-				'label' => esc_html__('Content', 'basictheme'),
+				'label' => esc_html__('Content', 'healthnews'),
 			]
 		);
 
 		$this->add_control(
 			'title',
 			[
-				'label' => esc_html__('Title', 'basictheme'),
+				'label' => esc_html__('Title', 'healthnews'),
 				'type' => Controls_Manager::TEXT,
 				'label_block' => true,
-				'default' => esc_html__('This is an icon box', 'basictheme'),
+				'default' => esc_html__('This is an icon box', 'healthnews'),
 			]
 		);
 
 		$this->add_control(
 			'text',
 			[
-				'label' => esc_html__('Description', 'basictheme'),
+				'label' => esc_html__('Description', 'healthnews'),
 				'type' => Controls_Manager::TEXTAREA,
 				'label_block' => true,
 				'rows' => 10,
-				'default' => esc_html__('Write a short description, that will describe the title or something informational and useful.', 'basictheme'),
-				'placeholder' => esc_html__( 'Type your description here', 'basictheme' ),
+				'default' => esc_html__('Write a short description, that will describe the title or something informational and useful.', 'healthnews'),
+				'placeholder' => esc_html__( 'Type your description here', 'healthnews' ),
 			]
 		);
 
 		$this->add_control(
 			'show_description',
 			[
-				'label' => esc_html__('Show Description', 'basictheme'),
+				'label' => esc_html__('Show Description', 'healthnews'),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'yes',
-				'label_on' => esc_html__('Show', 'basictheme'),
-				'label_off' => esc_html__('Hide', 'basictheme'),
+				'label_on' => esc_html__('Show', 'healthnews'),
+				'label_off' => esc_html__('Hide', 'healthnews'),
 				'return_value' => 'yes',
 			]
 		);
@@ -198,20 +198,20 @@ class BasicTheme_Elementor_Info_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'content_alignment',
 			[
-				'label' => esc_html__('Content Alignment', 'basictheme'),
+				'label' => esc_html__('Content Alignment', 'healthnews'),
 				'type' => Controls_Manager::CHOOSE,
 				'label_block' => true,
 				'options' => [
 					'left' => [
-						'title' => esc_html__('Left', 'basictheme'),
+						'title' => esc_html__('Left', 'healthnews'),
 						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => esc_html__('Center', 'basictheme'),
+						'title' => esc_html__('Center', 'healthnews'),
 						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
-						'title' => esc_html__('Right', 'basictheme'),
+						'title' => esc_html__('Right', 'healthnews'),
 						'icon' => 'eicon-text-align-right',
 					],
 				],
@@ -229,7 +229,7 @@ class BasicTheme_Elementor_Info_Box extends Widget_Base {
 		$this->start_controls_section(
 			'icon_style',
 			[
-				'label' => esc_html__('Icon', 'basictheme'),
+				'label' => esc_html__('Icon', 'healthnews'),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'img_or_icon' => 'icon',
@@ -240,7 +240,7 @@ class BasicTheme_Elementor_Info_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_size',
 			[
-				'label' => esc_html__('Icon Size', 'basictheme'),
+				'label' => esc_html__('Icon Size', 'healthnews'),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => 40,
@@ -262,7 +262,7 @@ class BasicTheme_Elementor_Info_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_spacing',
 			[
-				'label' => esc_html__('Spacing', 'basictheme'),
+				'label' => esc_html__('Spacing', 'healthnews'),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => 12,
@@ -285,14 +285,14 @@ class BasicTheme_Elementor_Info_Box extends Widget_Base {
 		$this->start_controls_tab(
 			'icon_normal',
 			[
-				'label' => esc_html__('Normal', 'basictheme'),
+				'label' => esc_html__('Normal', 'healthnews'),
 			]
 		);
 
 		$this->add_control(
 			'icon_color',
 			[
-				'label' => esc_html__('Icon Color', 'basictheme'),
+				'label' => esc_html__('Icon Color', 'healthnews'),
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
@@ -307,14 +307,14 @@ class BasicTheme_Elementor_Info_Box extends Widget_Base {
 		$this->start_controls_tab(
 			'icon_hover',
 			[
-				'label' => esc_html__('Hover', 'basictheme'),
+				'label' => esc_html__('Hover', 'healthnews'),
 			]
 		);
 
 		$this->add_control(
 			'icon_hover_color',
 			[
-				'label' => esc_html__('Icon Color', 'basictheme'),
+				'label' => esc_html__('Icon Color', 'healthnews'),
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
@@ -334,7 +334,7 @@ class BasicTheme_Elementor_Info_Box extends Widget_Base {
 		$this->start_controls_section(
 			'content_style',
 			[
-				'label' => esc_html__('Content', 'basictheme'),
+				'label' => esc_html__('Content', 'healthnews'),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -342,7 +342,7 @@ class BasicTheme_Elementor_Info_Box extends Widget_Base {
 		$this->add_control(
 			'title_options',
 			[
-				'label' => esc_html__( 'Title', 'basictheme' ),
+				'label' => esc_html__( 'Title', 'healthnews' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -351,7 +351,7 @@ class BasicTheme_Elementor_Info_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'title_spacing',
 			[
-				'label' => esc_html__('Spacing', 'basictheme'),
+				'label' => esc_html__('Spacing', 'healthnews'),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => 12,
@@ -372,7 +372,7 @@ class BasicTheme_Elementor_Info_Box extends Widget_Base {
 		$this->add_control(
 			'title_color',
 			[
-				'label' => esc_html__('Color', 'basictheme'),
+				'label' => esc_html__('Color', 'healthnews'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .element-info-box__content .title' => 'color: {{VALUE}};'
@@ -391,7 +391,7 @@ class BasicTheme_Elementor_Info_Box extends Widget_Base {
 		$this->add_control(
 			'description_options',
 			[
-				'label' => esc_html__( 'Description', 'basictheme' ),
+				'label' => esc_html__( 'Description', 'healthnews' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -400,7 +400,7 @@ class BasicTheme_Elementor_Info_Box extends Widget_Base {
 		$this->add_control(
 			'description_color',
 			[
-				'label' => esc_html__('Color', 'basictheme'),
+				'label' => esc_html__('Color', 'healthnews'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .element-info-box__content .text' => 'color: {{VALUE}};'

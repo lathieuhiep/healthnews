@@ -1,8 +1,8 @@
 <?php
-$sidebar = basictheme_get_option('opt_post_cat_sidebar_position', 'right');
-$per_row = basictheme_get_option('opt_post_cat_per_row', '2');
+$sidebar = healthnews_get_option('opt_post_cat_sidebar_position', 'right');
+$per_row = healthnews_get_option('opt_post_cat_per_row', '2');
 
-$class_col_content = basictheme_col_use_sidebar($sidebar, 'sidebar-main');
+$class_col_content = healthnews_col_use_sidebar($sidebar, 'sidebar-main');
 
 $grid_col = 'grid-col-' . $per_row;
 if ( $sidebar !== 'hide' ) {
@@ -38,7 +38,7 @@ if ( $sidebar !== 'hide' ) {
 						                <?php the_post_thumbnail('large'); ?>
                                     </div>
 
-					                <?php basictheme_post_meta(); ?>
+					                <?php healthnews_post_meta(); ?>
 
                                     <div class="post-desc">
                                         <p>
@@ -52,10 +52,10 @@ if ( $sidebar !== 'hide' ) {
                                         </p>
 
                                         <a href="<?php the_permalink(); ?>" class="text-read-more">
-							                <?php esc_html_e('Read more', 'basictheme'); ?>
+							                <?php esc_html_e('Read more', 'healthnews'); ?>
                                         </a>
 
-						                <?php basictheme_link_page(); ?>
+						                <?php healthnews_link_page(); ?>
                                     </div>
                                 </div>
                             </div>
@@ -65,7 +65,7 @@ if ( $sidebar !== 'hide' ) {
 		                ?>
                     </div>
                 <?php
-	                basictheme_pagination();
+	                healthnews_pagination();
                 else:
 	                if ( is_search() ) :
 		                get_template_part('template-parts/post/content', 'no-data');

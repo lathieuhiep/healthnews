@@ -8,8 +8,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 require get_parent_theme_file_path( '/includes/theme-helper.php' );
 
 // Setup Theme
-add_action( 'after_setup_theme', 'basictheme_setup' );
-function basictheme_setup(): void {
+add_action( 'after_setup_theme', 'healthnews_setup' );
+function healthnews_setup(): void {
 	// Set the content width based on the theme's design and stylesheet.
 	global $content_width;
 
@@ -24,7 +24,7 @@ function basictheme_setup(): void {
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 */
-	load_theme_textdomain( 'basictheme', get_parent_theme_file_path( '/languages' ) );
+	load_theme_textdomain( 'healthnews', get_parent_theme_file_path( '/languages' ) );
 
 	/**
 	 * Set up theme defaults and registers support for various WordPress features.
@@ -47,7 +47,7 @@ function basictheme_setup(): void {
 	// This theme uses wp_nav_menu() in two locations.
     register_nav_menus(
         array(
-            'primary'   => esc_html__('Primary Menu', 'basictheme'),
+            'primary'   => esc_html__('Primary Menu', 'healthnews'),
         )
     );
 

@@ -13,7 +13,7 @@ global $product;
                 <?php
                 woocommerce_show_product_sale_flash();
 
-                basictheme_quick_view_product_image();
+                healthnews_quick_view_product_image();
                 ?>
             </div>
 
@@ -36,7 +36,7 @@ global $product;
                     <?php woocommerce_template_single_add_to_cart(); ?>
 
                     <div class="notice d-none">
-                        <?php esc_html_e( 'Please choose the quantity of items you wish to add to your cart…', 'basictheme' ); ?>
+                        <?php esc_html_e( 'Please choose the quantity of items you wish to add to your cart…', 'healthnews' ); ?>
                     </div>
                 </div>
             </div>

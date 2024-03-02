@@ -3,11 +3,11 @@
 /*
 * Quick view product
 */
-function basictheme_button_quick_view() {
+function healthnews_button_quick_view() {
 
 ?>
 
-    <a class="btn-quick-view-product" href="#" title="<?php esc_attr_e( 'Quick view product', 'basictheme' ); ?>" data-id-product="<?php echo esc_attr( get_the_ID() ); ?>" data-bs-toggle="modal" data-bs-target="#mode-quick-view-product">
+    <a class="btn-quick-view-product" href="#" title="<?php esc_attr_e( 'Quick view product', 'healthnews' ); ?>" data-id-product="<?php echo esc_attr( get_the_ID() ); ?>" data-bs-toggle="modal" data-bs-target="#mode-quick-view-product">
         <?php esc_html_e('Xem nhanh'); ?>
     </a>
 
@@ -15,7 +15,7 @@ function basictheme_button_quick_view() {
 
 }
 
-function basictheme_popup_quick_view_product() {
+function healthnews_popup_quick_view_product() {
 
 ?>
 
@@ -41,10 +41,10 @@ function basictheme_popup_quick_view_product() {
 }
 
 /* Ajax quick view product */
-add_action( 'wp_ajax_nopriv_basictheme_get_quick_view_product', 'basictheme_get_quick_view_product' );
-add_action( 'wp_ajax_basictheme_get_quick_view_product', 'basictheme_get_quick_view_product' );
+add_action( 'wp_ajax_nopriv_healthnews_get_quick_view_product', 'healthnews_get_quick_view_product' );
+add_action( 'wp_ajax_healthnews_get_quick_view_product', 'healthnews_get_quick_view_product' );
 
-function basictheme_get_quick_view_product() {
+function healthnews_get_quick_view_product() {
 
     $product_id   =   $_POST['product_id'];
 
@@ -64,16 +64,16 @@ function basictheme_get_quick_view_product() {
 }
 
 /* Quick view product image */
-function basictheme_quick_view_product_image() {
+function healthnews_quick_view_product_image() {
     get_template_part( 'extension/woocommerce/quickview/product', 'image' );
 }
 
 
 /* Add to cart quick view */
-add_action('wp_ajax_basictheme_woo_ajax_add_to_cart', 'basictheme_woo_ajax_add_to_cart');
-add_action('wp_ajax_nopriv_basictheme_woo_ajax_add_to_cart', 'basictheme_woo_ajax_add_to_cart');
+add_action('wp_ajax_healthnews_woo_ajax_add_to_cart', 'healthnews_woo_ajax_add_to_cart');
+add_action('wp_ajax_nopriv_healthnews_woo_ajax_add_to_cart', 'healthnews_woo_ajax_add_to_cart');
 
-function basictheme_woo_ajax_add_to_cart() {
+function healthnews_woo_ajax_add_to_cart() {
 
     $type_product = $_POST['type_product'];
 

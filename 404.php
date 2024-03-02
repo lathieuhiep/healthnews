@@ -7,11 +7,11 @@
             </h1>
 
             <p>
-				<?php esc_html_e('The page you are looking for might have been removed had its name changed or is temporarily unavailable.', 'basictheme'); ?>
+				<?php esc_html_e('The page you are looking for might have been removed had its name changed or is temporarily unavailable.', 'healthnews'); ?>
             </p>
 
             <a href="<?php echo esc_url( get_home_url('/') ); ?>">
-				<?php esc_html_e('Home Page', 'basictheme'); ?>
+				<?php esc_html_e('Home Page', 'healthnews'); ?>
             </a>
         </div>
     </div>

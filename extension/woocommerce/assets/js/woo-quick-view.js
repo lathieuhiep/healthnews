@@ -20,7 +20,7 @@
             url: woo_quick_view_product.url,
             type: 'POST',
             data: ({
-                action: 'basictheme_get_quick_view_product',
+                action: 'healthnews_get_quick_view_product',
                 product_id: product_id
             }),
 
@@ -147,7 +147,7 @@
             }
 
             data = {
-                action: 'basictheme_woo_ajax_add_to_cart',
+                action: 'healthnews_woo_ajax_add_to_cart',
                 product_id: product_id,
                 product_sku: '',
                 items: items,
@@ -161,7 +161,7 @@
             variation_id = $form.find('input[name=variation_id]').val() || 0;
 
             data = {
-                action: 'basictheme_woo_ajax_add_to_cart',
+                action: 'healthnews_woo_ajax_add_to_cart',
                 product_id: product_id,
                 product_sku: '',
                 quantity: product_qty,

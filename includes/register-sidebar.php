@@ -3,7 +3,7 @@
 add_filter('use_widgets_block_editor', '__return_false');
 
 /* Better way to add multiple widgets areas */
-function basictheme_widget_registration($name, $id, $description = ''): void {
+function healthnews_widget_registration($name, $id, $description = ''): void {
 	register_sidebar( array(
 		'name' => $name,
 		'id' => $id,
@@ -15,15 +15,15 @@ function basictheme_widget_registration($name, $id, $description = ''): void {
 	));
 }
 
-function basictheme_multiple_widget_init(): void {
-	basictheme_widget_registration( esc_html__('Sidebar Main', 'basictheme'), 'sidebar-main' );
-	basictheme_widget_registration( esc_html__('Sidebar Shop', 'basictheme'), 'sidebar-wc', esc_html__('Display sidebar on page shop.', 'basictheme') );
-	basictheme_widget_registration( esc_html__('Sidebar Product', 'basictheme'), 'sidebar-wc-product', esc_html__('Display sidebar on page single product.', 'basictheme') );
+function healthnews_multiple_widget_init(): void {
+	healthnews_widget_registration( esc_html__('Sidebar Main', 'healthnews'), 'sidebar-main' );
+	healthnews_widget_registration( esc_html__('Sidebar Shop', 'healthnews'), 'sidebar-wc', esc_html__('Display sidebar on page shop.', 'healthnews') );
+	healthnews_widget_registration( esc_html__('Sidebar Product', 'healthnews'), 'sidebar-wc-product', esc_html__('Display sidebar on page single product.', 'healthnews') );
 
-	basictheme_widget_registration( esc_html__('Sidebar Footer Column 1', 'basictheme'), 'sidebar-footer-column-1' );
-	basictheme_widget_registration( esc_html__('Sidebar Footer Column 2', 'basictheme'), 'sidebar-footer-column-2' );
-	basictheme_widget_registration( esc_html__('Sidebar Footer Column 3', 'basictheme'), 'sidebar-footer-column-3' );
-	basictheme_widget_registration( esc_html__('Sidebar Footer Column 4', 'basictheme'), 'sidebar-footer-column-4' );
+	healthnews_widget_registration( esc_html__('Sidebar Footer Column 1', 'healthnews'), 'sidebar-footer-column-1' );
+	healthnews_widget_registration( esc_html__('Sidebar Footer Column 2', 'healthnews'), 'sidebar-footer-column-2' );
+	healthnews_widget_registration( esc_html__('Sidebar Footer Column 3', 'healthnews'), 'sidebar-footer-column-3' );
+	healthnews_widget_registration( esc_html__('Sidebar Footer Column 4', 'healthnews'), 'sidebar-footer-column-4' );
 }
 
-add_action('widgets_init', 'basictheme_multiple_widget_init');
+add_action('widgets_init', 'healthnews_multiple_widget_init');

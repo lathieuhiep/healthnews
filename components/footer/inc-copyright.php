@@ -1,6 +1,6 @@
 <?php
-$show_copyright = basictheme_get_option('opt_footer_copyright_show', '1');
-$copyright = basictheme_get_option('opt_footer_copyright_content', 'Copyright &copy; DiepLK');
+$show_copyright = healthnews_get_option('opt_footer_copyright_show', '1');
+$copyright = healthnews_get_option('opt_footer_copyright_content', 'Copyright &copy; DiepLK');
 
 if ( $show_copyright == '1' ) :
 ?>

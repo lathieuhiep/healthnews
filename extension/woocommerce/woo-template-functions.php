@@ -3,9 +3,9 @@
  * General functions used to integrate this theme with WooCommerce.
  */
 
-add_action( 'after_setup_theme', 'basictheme_shop_setup' );
+add_action( 'after_setup_theme', 'healthnews_shop_setup' );
 
-function basictheme_shop_setup(): void {
+function healthnews_shop_setup(): void {
     add_theme_support( 'woocommerce' );
     add_theme_support( 'wc-product-gallery-zoom' );
     add_theme_support( 'wc-product-gallery-lightbox' );
@@ -13,24 +13,24 @@ function basictheme_shop_setup(): void {
 }
 
 /* Start limit product */
-add_filter('loop_shop_per_page', 'basictheme_show_products_per_page');
+add_filter('loop_shop_per_page', 'healthnews_show_products_per_page');
 
-function basictheme_show_products_per_page() {
-    return basictheme_get_option('opt_shop_cat_limit', 12);
+function healthnews_show_products_per_page() {
+    return healthnews_get_option('opt_shop_cat_limit', 12);
 }
 /* End limit product */
 
 /* Start Change number of products per row */
-add_filter('loop_shop_columns', 'basictheme_loop_columns_product');
+add_filter('loop_shop_columns', 'healthnews_loop_columns_product');
 
-function basictheme_loop_columns_product() {
-    return basictheme_get_option('opt_shop_cat_per_row', '4');
+function healthnews_loop_columns_product() {
+    return healthnews_get_option('opt_shop_cat_per_row', '4');
 }
 /* End Change number of products per row */
 
 /* Start get cart */
 
-function basictheme_get_cart(): void {
+function healthnews_get_cart(): void {
 ?>
     <div class="cart-box">
         <div class="cart-customlocation">
@@ -45,19 +45,19 @@ function basictheme_get_cart(): void {
 }
 
 /* To ajaxify your cart viewer */
-add_filter( 'woocommerce_add_to_cart_fragments', 'basictheme_add_to_cart_fragment' );
+add_filter( 'woocommerce_add_to_cart_fragments', 'healthnews_add_to_cart_fragment' );
 
-if ( ! function_exists( 'basictheme_add_to_cart_fragment' ) ) :
+if ( ! function_exists( 'healthnews_add_to_cart_fragment' ) ) :
 
-    function basictheme_add_to_cart_fragment( $basictheme_fragments ) {
+    function healthnews_add_to_cart_fragment( $healthnews_fragments ) {
 
         ob_start();
 
-        do_action( 'basictheme_woo_shopping_cart' );
+        do_action( 'healthnews_woo_shopping_cart' );
 
-        $basictheme_fragments['.cart-box'] = ob_get_clean();
+        $healthnews_fragments['.cart-box'] = ob_get_clean();
 
-        return $basictheme_fragments;
+        return $healthnews_fragments;
 
     }
 
@@ -65,24 +65,24 @@ endif;
 /* End get cart */
 
 // get sidebar active
-function basictheme_woo_get_sidebar_active(): array {
+function healthnews_woo_get_sidebar_active(): array {
     $sidebar = [];
 
 	if ( is_product() ) :
 		$sidebar['active'] = 'sidebar-wc-product';
-		$sidebar['position'] = basictheme_get_option('opt_shop_single_sidebar_position');
+		$sidebar['position'] = healthnews_get_option('opt_shop_single_sidebar_position');
 	else:
 		$sidebar['active'] = 'sidebar-wc';
-		$sidebar['position'] = basictheme_get_option('opt_shop_cat_sidebar_position');
+		$sidebar['position'] = healthnews_get_option('opt_shop_cat_sidebar_position');
 	endif;
 
     return $sidebar;
 }
 
 /* Start Sidebar Shop */
-if ( ! function_exists( 'basictheme_woo_get_sidebar' ) ) :
-    function basictheme_woo_get_sidebar(): void {
-	    $sidebar = basictheme_woo_get_sidebar_active();
+if ( ! function_exists( 'healthnews_woo_get_sidebar' ) ) :
+    function healthnews_woo_get_sidebar(): void {
+	    $sidebar = healthnews_woo_get_sidebar_active();
 
 	    if( !empty( $sidebar ) && $sidebar['position'] != 'hide' && is_active_sidebar( $sidebar['active'] ) ):
 	        if ( $sidebar['position'] == 'left' ) :
@@ -104,13 +104,13 @@ endif;
 * Lay Out Shop
 */
 
-if ( ! function_exists( 'basictheme_woo_before_main_content' ) ) :
+if ( ! function_exists( 'healthnews_woo_before_main_content' ) ) :
     /**
      * Before Content
      * Wraps all WooCommerce content in wrappers which match the theme markup
      */
-    function basictheme_woo_before_main_content(): void {
-	    $sidebar = basictheme_woo_get_sidebar_active();
+    function healthnews_woo_before_main_content(): void {
+	    $sidebar = healthnews_woo_get_sidebar_active();
     ?>
         <div class="site-shop">
             <div class="container">
@@ -120,9 +120,9 @@ if ( ! function_exists( 'basictheme_woo_before_main_content' ) ) :
                     /**
                      * woocommerce_sidebar hook.
                      *
-                     * @hooked basictheme_woo_sidebar - 10
+                     * @hooked healthnews_woo_sidebar - 10
                      */
-                    do_action( 'basictheme_woo_sidebar' );
+                    do_action( 'healthnews_woo_sidebar' );
                 ?>
                     <div class="<?php echo !empty( $sidebar ) && is_active_sidebar( $sidebar['active'] ) && $sidebar['position'] != 'hide' ? 'col-12 col-md-8 col-lg-9 order-1 has-sidebar' : 'col-md-12'; ?>">
 
@@ -132,12 +132,12 @@ if ( ! function_exists( 'basictheme_woo_before_main_content' ) ) :
 
 endif;
 
-if ( ! function_exists( 'basictheme_woo_after_main_content' ) ) :
+if ( ! function_exists( 'healthnews_woo_after_main_content' ) ) :
     /**
      * After Content
      * Closes the wrapping divs
      */
-    function basictheme_woo_after_main_content(): void {
+    function healthnews_woo_after_main_content(): void {
     ?>
                     </div><!-- .col-md-9 -->
                 </div><!-- .row -->
@@ -148,14 +148,14 @@ if ( ! function_exists( 'basictheme_woo_after_main_content' ) ) :
 
 endif;
 
-if ( ! function_exists( 'basictheme_woo_product_thumbnail_open' ) ) :
+if ( ! function_exists( 'healthnews_woo_product_thumbnail_open' ) ) :
     /**
      * Hook: woocommerce_before_shop_loop_item_title.
      *
-     * @hooked basictheme_woo_product_thumbnail_open - 5
+     * @hooked healthnews_woo_product_thumbnail_open - 5
      */
 
-    function basictheme_woo_product_thumbnail_open(): void {
+    function healthnews_woo_product_thumbnail_open(): void {
 
 ?>
     <div class="site-shop__product--item-image">
@@ -165,15 +165,15 @@ if ( ! function_exists( 'basictheme_woo_product_thumbnail_open' ) ) :
 
 endif;
 
-if ( ! function_exists( 'basictheme_woo_product_thumbnail_close' ) ) :
+if ( ! function_exists( 'healthnews_woo_product_thumbnail_close' ) ) :
     /**
      * Hook: woocommerce_before_shop_loop_item_title.
      *
-     * @hooked basictheme_woo_product_thumbnail_close - 15
+     * @hooked healthnews_woo_product_thumbnail_close - 15
      */
 
-    function basictheme_woo_product_thumbnail_close(): void {
-        do_action( 'basictheme_woo_button_quick_view' );
+    function healthnews_woo_product_thumbnail_close(): void {
+        do_action( 'healthnews_woo_button_quick_view' );
 ?>
         </div><!-- .site-shop__product--item-image -->
 
@@ -182,14 +182,14 @@ if ( ! function_exists( 'basictheme_woo_product_thumbnail_close' ) ) :
     }
 endif;
 
-if ( ! function_exists( 'basictheme_woo_get_product_title' ) ) :
+if ( ! function_exists( 'healthnews_woo_get_product_title' ) ) :
     /**
      * Hook: woocommerce_shop_loop_item_title.
      *
-     * @hooked basictheme_woo_get_product_title - 10
+     * @hooked healthnews_woo_get_product_title - 10
      */
 
-    function basictheme_woo_get_product_title(): void {
+    function healthnews_woo_get_product_title(): void {
     ?>
         <h2 class="woocommerce-loop-product__title">
             <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
@@ -200,27 +200,27 @@ if ( ! function_exists( 'basictheme_woo_get_product_title' ) ) :
     }
 endif;
 
-if ( ! function_exists( 'basictheme_woo_after_shop_loop_item_title' ) ) :
+if ( ! function_exists( 'healthnews_woo_after_shop_loop_item_title' ) ) :
     /**
      * Hook: woocommerce_after_shop_loop_item_title.
      *
-     * @hooked basictheme_woo_after_shop_loop_item_title - 15
+     * @hooked healthnews_woo_after_shop_loop_item_title - 15
      */
-    function basictheme_woo_after_shop_loop_item_title(): void {
+    function healthnews_woo_after_shop_loop_item_title(): void {
     ?>
         </div><!-- .site-shop__product--item-content -->
     <?php
     }
 endif;
 
-if ( ! function_exists( 'basictheme_woo_loop_add_to_cart_open' ) ) :
+if ( ! function_exists( 'healthnews_woo_loop_add_to_cart_open' ) ) :
     /**
      * Hook: woocommerce_after_shop_loop_item.
      *
-     * @hooked basictheme_woo_loop_add_to_cart_open - 4
+     * @hooked healthnews_woo_loop_add_to_cart_open - 4
      */
 
-    function basictheme_woo_loop_add_to_cart_open(): void {
+    function healthnews_woo_loop_add_to_cart_open(): void {
     ?>
         <div class="site-shop__product-add-to-cart">
     <?php
@@ -228,14 +228,14 @@ if ( ! function_exists( 'basictheme_woo_loop_add_to_cart_open' ) ) :
 
 endif;
 
-if ( ! function_exists( 'basictheme_woo_loop_add_to_cart_close' ) ) :
+if ( ! function_exists( 'healthnews_woo_loop_add_to_cart_close' ) ) :
     /**
      * Hook: woocommerce_after_shop_loop_item.
      *
-     * @hooked basictheme_woo_loop_add_to_cart_close - 12
+     * @hooked healthnews_woo_loop_add_to_cart_close - 12
      */
 
-    function basictheme_woo_loop_add_to_cart_close(): void {
+    function healthnews_woo_loop_add_to_cart_close(): void {
     ?>
         </div><!-- .site-shop__product-add-to-cart -->
     <?php
@@ -243,13 +243,13 @@ if ( ! function_exists( 'basictheme_woo_loop_add_to_cart_close' ) ) :
 
 endif;
 
-if ( ! function_exists( 'basictheme_woo_before_shop_loop_item' ) ) :
+if ( ! function_exists( 'healthnews_woo_before_shop_loop_item' ) ) :
     /**
      * Hook: woocommerce_before_shop_loop_item.
      *
-     * @hooked basictheme_woo_before_shop_loop_item - 5
+     * @hooked healthnews_woo_before_shop_loop_item - 5
      */
-    function basictheme_woo_before_shop_loop_item(): void {
+    function healthnews_woo_before_shop_loop_item(): void {
     ?>
 
         <div class="site-shop__product--item">
@@ -258,13 +258,13 @@ if ( ! function_exists( 'basictheme_woo_before_shop_loop_item' ) ) :
     }
 endif;
 
-if ( ! function_exists( 'basictheme_woo_after_shop_loop_item' ) ) :
+if ( ! function_exists( 'healthnews_woo_after_shop_loop_item' ) ) :
     /**
      * Hook: woocommerce_after_shop_loop_item.
      *
-     * @hooked basictheme_woo_after_shop_loop_item - 15
+     * @hooked healthnews_woo_after_shop_loop_item - 15
      */
-    function basictheme_woo_after_shop_loop_item(): void {
+    function healthnews_woo_after_shop_loop_item(): void {
     ?>
 
         </div><!-- .site-shop__product--item -->
@@ -273,14 +273,14 @@ if ( ! function_exists( 'basictheme_woo_after_shop_loop_item' ) ) :
     }
 endif;
 
-if ( ! function_exists( 'basictheme_woo_before_shop_loop_open' ) ) :
+if ( ! function_exists( 'healthnews_woo_before_shop_loop_open' ) ) :
     /**
      * Before Shop Loop
      * woocommerce_before_shop_loop hook.
      *
-     * @hooked basictheme_woo_before_shop_loop_open - 5
+     * @hooked healthnews_woo_before_shop_loop_open - 5
      */
-    function basictheme_woo_before_shop_loop_open(): void {
+    function healthnews_woo_before_shop_loop_open(): void {
 
     ?>
         <div class="site-shop__result-count-ordering d-flex align-items-center justify-content-between">
@@ -289,14 +289,14 @@ if ( ! function_exists( 'basictheme_woo_before_shop_loop_open' ) ) :
     }
 endif;
 
-if ( ! function_exists( 'basictheme_woo_before_shop_loop_close' ) ) :
+if ( ! function_exists( 'healthnews_woo_before_shop_loop_close' ) ) :
     /**
      * Before Shop Loop
      * woocommerce_before_shop_loop hook.
      *
-     * @hooked basictheme_woo_before_shop_loop_close - 35
+     * @hooked healthnews_woo_before_shop_loop_close - 35
      */
-    function basictheme_woo_before_shop_loop_close(): void {
+    function healthnews_woo_before_shop_loop_close(): void {
 
     ?>
         </div><!-- .site-shop__result-count-ordering -->
@@ -309,17 +309,17 @@ endif;
 * Single Shop
 */
 
-if ( ! function_exists( 'basictheme_woo_before_single_product' ) ) :
+if ( ! function_exists( 'healthnews_woo_before_single_product' ) ) :
 
     /**
      * Before Content Single  product
      *
      * woocommerce_before_single_product hook.
      *
-     * @hooked basictheme_woo_before_single_product - 5
+     * @hooked healthnews_woo_before_single_product - 5
      */
 
-    function basictheme_woo_before_single_product(): void {
+    function healthnews_woo_before_single_product(): void {
 
     ?>
         <div class="site-shop-single">
@@ -329,16 +329,16 @@ if ( ! function_exists( 'basictheme_woo_before_single_product' ) ) :
 
 endif;
 
-if ( ! function_exists( 'basictheme_woo_after_single_product' ) ) :
+if ( ! function_exists( 'healthnews_woo_after_single_product' ) ) :
     /**
      * After Content Single  product
      *
      * woocommerce_after_single_product hook.
      *
-     * @hooked basictheme_woo_after_single_product - 30
+     * @hooked healthnews_woo_after_single_product - 30
      */
 
-    function basictheme_woo_after_single_product(): void {
+    function healthnews_woo_after_single_product(): void {
 
     ?>
         </div><!-- .site-shop-single -->
@@ -348,16 +348,16 @@ if ( ! function_exists( 'basictheme_woo_after_single_product' ) ) :
 
 endif;
 
-if ( !function_exists( 'basictheme_woo_before_single_product_summary_open_warp' ) ) :
+if ( !function_exists( 'healthnews_woo_before_single_product_summary_open_warp' ) ) :
 
     /**
      * Before single product summary
      * woocommerce_before_single_product_summary hook.
      *
-     * @hooked basictheme_woo_before_single_product_summary_open_warp - 1
+     * @hooked healthnews_woo_before_single_product_summary_open_warp - 1
      */
 
-    function basictheme_woo_before_single_product_summary_open_warp(): void {
+    function healthnews_woo_before_single_product_summary_open_warp(): void {
 
     ?>
         <div class="site-shop-single__warp">
@@ -367,16 +367,16 @@ if ( !function_exists( 'basictheme_woo_before_single_product_summary_open_warp' 
 
 endif;
 
-if ( !function_exists( 'basictheme_woo_after_single_product_summary_close_warp' ) ) :
+if ( !function_exists( 'healthnews_woo_after_single_product_summary_close_warp' ) ) :
 
     /**
      * After single product summary
      * woocommerce_after_single_product_summary hook.
      *
-     * @hooked basictheme_woo_after_single_product_summary_close_warp - 5
+     * @hooked healthnews_woo_after_single_product_summary_close_warp - 5
      */
 
-    function basictheme_woo_after_single_product_summary_close_warp(): void {
+    function healthnews_woo_after_single_product_summary_close_warp(): void {
 
     ?>
         </div><!-- .site-shop-single__warp -->
@@ -386,14 +386,14 @@ if ( !function_exists( 'basictheme_woo_after_single_product_summary_close_warp' 
 
 endif;
 
-if ( ! function_exists( 'basictheme_woo_before_single_product_summary_open' ) ) :
+if ( ! function_exists( 'healthnews_woo_before_single_product_summary_open' ) ) :
     /**
      * woocommerce_before_single_product_summary hook.
      *
-     * @hooked basictheme_woo_before_single_product_summary_open - 5
+     * @hooked healthnews_woo_before_single_product_summary_open - 5
      */
 
-    function basictheme_woo_before_single_product_summary_open(): void {
+    function healthnews_woo_before_single_product_summary_open(): void {
 
     ?>
         <div class="site-shop-single__gallery-box">
@@ -402,15 +402,15 @@ if ( ! function_exists( 'basictheme_woo_before_single_product_summary_open' ) ) 
     }
 endif;
 
-if ( ! function_exists( 'basictheme_woo_before_single_product_summary_close' ) ) :
+if ( ! function_exists( 'healthnews_woo_before_single_product_summary_close' ) ) :
 
     /**
      * woocommerce_before_single_product_summary hook.
      *
-     * @hooked basictheme_woo_before_single_product_summary_close - 30
+     * @hooked healthnews_woo_before_single_product_summary_close - 30
      */
 
-    function basictheme_woo_before_single_product_summary_close(): void {
+    function healthnews_woo_before_single_product_summary_close(): void {
 
     ?>
         </div><!-- .site-shop-single__gallery-box -->

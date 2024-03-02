@@ -13,11 +13,11 @@ class BasicTheme_Elementor_About_Text extends Widget_Base {
     }
 
     public function get_name(): string {
-        return 'basictheme-about-text';
+        return 'healthnews-about-text';
     }
 
     public function get_title(): string {
-        return esc_html__( 'About Text', 'basictheme' );
+        return esc_html__( 'About Text', 'healthnews' );
     }
 
     public function get_icon(): string {
@@ -29,7 +29,7 @@ class BasicTheme_Elementor_About_Text extends Widget_Base {
         $this->start_controls_section(
             'content_section',
             [
-                'label' => esc_html__( 'Heading', 'basictheme' ),
+                'label' => esc_html__( 'Heading', 'healthnews' ),
                 'tab' => Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -37,9 +37,9 @@ class BasicTheme_Elementor_About_Text extends Widget_Base {
         $this->add_control(
             'heading',
             [
-                'label'         =>  esc_html__( 'Heading', 'basictheme' ),
+                'label'         =>  esc_html__( 'Heading', 'healthnews' ),
                 'type'          =>  Controls_Manager::TEXT,
-                'default'       =>  esc_html__( 'Heading About Text', 'basictheme' ),
+                'default'       =>  esc_html__( 'Heading About Text', 'healthnews' ),
                 'label_block'   =>  true
             ]
         );
@@ -47,9 +47,9 @@ class BasicTheme_Elementor_About_Text extends Widget_Base {
         $this->add_control(
             'description',
             [
-                'label'     =>  esc_html__( 'Description', 'basictheme' ),
+                'label'     =>  esc_html__( 'Description', 'healthnews' ),
                 'type'      =>  Controls_Manager::WYSIWYG,
-                'default'   =>  esc_html__( 'Default description', 'basictheme' ),
+                'default'   =>  esc_html__( 'Default description', 'healthnews' ),
             ]
         );
 
@@ -59,7 +59,7 @@ class BasicTheme_Elementor_About_Text extends Widget_Base {
         $this->start_controls_section(
             'style_heading',
             [
-                'label' => esc_html__( 'Heading', 'basictheme' ),
+                'label' => esc_html__( 'Heading', 'healthnews' ),
                 'tab' => Controls_Manager::TAB_STYLE
             ]
         );
@@ -67,26 +67,26 @@ class BasicTheme_Elementor_About_Text extends Widget_Base {
         $this->add_control(
             'align',
             [
-                'label'     =>  esc_html__( 'Alignment Title', 'basictheme' ),
+                'label'     =>  esc_html__( 'Alignment Title', 'healthnews' ),
                 'type'      =>  Controls_Manager::CHOOSE,
                 'options'   =>  [
                     'left'  =>  [
-                        'title' =>  esc_html__( 'Left', 'basictheme' ),
+                        'title' =>  esc_html__( 'Left', 'healthnews' ),
                         'icon'  =>  'eicon-text-align-left',
                     ],
 
                     'center' => [
-                        'title' =>  esc_html__( 'Center', 'basictheme' ),
+                        'title' =>  esc_html__( 'Center', 'healthnews' ),
                         'icon'  =>  'eicon-text-align-center',
                     ],
 
                     'right' => [
-                        'title' =>  esc_html__( 'Right', 'basictheme' ),
+                        'title' =>  esc_html__( 'Right', 'healthnews' ),
                         'icon'  =>  'eicon-text-align-right',
                     ],
 
                     'justify'=> [
-                        'title' =>  esc_html__( 'Justified', 'basictheme' ),
+                        'title' =>  esc_html__( 'Justified', 'healthnews' ),
                         'icon'  =>  'eicon-text-align-justify',
                     ],
                 ],
@@ -99,7 +99,7 @@ class BasicTheme_Elementor_About_Text extends Widget_Base {
         $this->add_control(
             'heading_color',
             [
-                'label'     =>  esc_html__( 'Color', 'basictheme' ),
+                'label'     =>  esc_html__( 'Color', 'healthnews' ),
                 'type'      =>  Controls_Manager::COLOR,
                 'selectors' =>  [
                     '{{WRAPPER}} .element-about-text__title' => 'color: {{VALUE}}',
@@ -111,7 +111,7 @@ class BasicTheme_Elementor_About_Text extends Widget_Base {
 	        Group_Control_Typography::get_type(),
             [
                 'name' => 'heading_typography',
-                'label' => esc_html__( 'Typography', 'basictheme' ),
+                'label' => esc_html__( 'Typography', 'healthnews' ),
                 'selector' => '{{WRAPPER}} .element-about-text__title',
             ]
         );
@@ -122,7 +122,7 @@ class BasicTheme_Elementor_About_Text extends Widget_Base {
         $this->start_controls_section(
             'style_description',
             [
-                'label' => esc_html__( 'Description', 'basictheme' ),
+                'label' => esc_html__( 'Description', 'healthnews' ),
                 'tab' => Controls_Manager::TAB_STYLE
             ]
         );
@@ -130,7 +130,7 @@ class BasicTheme_Elementor_About_Text extends Widget_Base {
         $this->add_control(
             'description_color',
             [
-                'label'     =>  __( 'Color', 'basictheme' ),
+                'label'     =>  __( 'Color', 'healthnews' ),
                 'type'      =>  Controls_Manager::COLOR,
                 'selectors' =>  [
                     '{{WRAPPER}} .element-about-text__description' => 'color: {{VALUE}}',
@@ -142,7 +142,7 @@ class BasicTheme_Elementor_About_Text extends Widget_Base {
 	        Group_Control_Typography::get_type(),
             [
                 'name' => 'description_typography',
-                'label' => __( 'Typography', 'basictheme' ),
+                'label' => __( 'Typography', 'healthnews' ),
                 'selector' => '{{WRAPPER}} .element-about-text__description',
             ]
         );

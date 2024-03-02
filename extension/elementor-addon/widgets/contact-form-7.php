@@ -14,11 +14,11 @@ class BasicTheme_Elementor_Contact_Form_7 extends Widget_Base {
 	}
 
 	public function get_name(): string {
-		return 'basictheme-contact-form-7';
+		return 'healthnews-contact-form-7';
 	}
 
 	public function get_title(): string {
-		return esc_html__( 'Contact Form 7', 'basictheme' );
+		return esc_html__( 'Contact Form 7', 'healthnews' );
 	}
 
 	public function get_icon(): string {
@@ -31,7 +31,7 @@ class BasicTheme_Elementor_Contact_Form_7 extends Widget_Base {
 		$this->start_controls_section(
 			'content_section',
 			[
-				'label' => esc_html__( 'Contact Form', 'basictheme' ),
+				'label' => esc_html__( 'Contact Form', 'healthnews' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -39,10 +39,10 @@ class BasicTheme_Elementor_Contact_Form_7 extends Widget_Base {
 		$this->add_control(
 			'contact_form_list',
 			[
-				'label' => esc_html__('Select Form', 'basictheme'),
+				'label' => esc_html__('Select Form', 'healthnews'),
 				'type' => Controls_Manager::SELECT,
 				'label_block' => true,
-				'options' => basictheme_get_form_cf7(),
+				'options' => healthnews_get_form_cf7(),
 				'default' => '0',
 			]
 		);

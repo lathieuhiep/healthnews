@@ -2,7 +2,7 @@
 $term_ids  = wp_get_post_terms( get_the_ID(), 'category', array( 'fields' => 'ids' ) );
 
 if ( !empty( $term_ids ) ):
-	$limit = basictheme_get_option('opt_post_single_related_limit', 3);
+	$limit = healthnews_get_option('opt_post_single_related_limit', 3);
 
     $arg = array(
         'post_type' => 'post',
@@ -17,7 +17,7 @@ if ( !empty( $term_ids ) ):
     ?>
         <div class="related-posts">
             <h3 class="related-posts__title">
-                <?php esc_html_e('Related Post', 'basictheme'); ?>
+                <?php esc_html_e('Related Post', 'healthnews'); ?>
             </h3>
 
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">

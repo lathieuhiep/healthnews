@@ -1,8 +1,8 @@
 <?php
 // setting favicon
-add_action('wp_head', 'basictheme_favicon', 1);
-function basictheme_favicon(): void {
-    $opt_favicon = basictheme_get_option( 'opt_general_favicon' );
+add_action('wp_head', 'healthnews_favicon', 1);
+function healthnews_favicon(): void {
+    $opt_favicon = healthnews_get_option( 'opt_general_favicon' );
 
     if ( empty( $opt_favicon['url'] ) ) :
         $favicon_url = get_theme_file_uri('/assets/images/favicon.png' );
@@ -14,8 +14,8 @@ function basictheme_favicon(): void {
 }
 
 // add property
-add_action( 'wp_head', 'basictheme_opengraph', 5 );
-function basictheme_opengraph(): void {
+add_action( 'wp_head', 'healthnews_opengraph', 5 );
+function healthnews_opengraph(): void {
 	global $post;
 
 	if ( is_single() ) :
@@ -45,18 +45,18 @@ function basictheme_opengraph(): void {
 }
 
 // Sanitize Pagination
-add_action( 'navigation_markup_template', 'basictheme_sanitize_pagination' );
-function basictheme_sanitize_pagination( $basictheme_content ): string {
+add_action( 'navigation_markup_template', 'healthnews_sanitize_pagination' );
+function healthnews_sanitize_pagination( $healthnews_content ): string {
 	// Remove role attribute
-	$basictheme_content = str_replace( 'role="navigation"', '', $basictheme_content );
+	$healthnews_content = str_replace( 'role="navigation"', '', $healthnews_content );
 
 	// Remove h2 tag
-	return preg_replace( '#<h2.*?>(.*?)<\/h2>#si', '', $basictheme_content );
+	return preg_replace( '#<h2.*?>(.*?)<\/h2>#si', '', $healthnews_content );
 }
 
 // Walker for the main menu
-add_filter( 'walker_nav_menu_start_el', 'basictheme_add_arrow',10,4);
-function basictheme_add_arrow( $output, $item, $depth, $args ){
+add_filter( 'walker_nav_menu_start_el', 'healthnews_add_arrow',10,4);
+function healthnews_add_arrow( $output, $item, $depth, $args ){
 	if('primary' == $args->theme_location && $depth >= 0 ){
 		if (in_array("menu-item-has-children", $item->classes)) {
 			$output .='<span class="sub-menu-toggle"></span>';
@@ -67,16 +67,16 @@ function basictheme_add_arrow( $output, $item, $depth, $args ){
 }
 
 // Custom Search Post
-add_action( 'pre_get_posts', 'basictheme_include_custom_post_types_in_search_results' );
-function basictheme_include_custom_post_types_in_search_results( $query ): void {
+add_action( 'pre_get_posts', 'healthnews_include_custom_post_types_in_search_results' );
+function healthnews_include_custom_post_types_in_search_results( $query ): void {
 	if ( $query->is_main_query() && $query->is_search() && ! is_admin() ) {
 		$query->set( 'post_type', array( 'post' ) );
 	}
 }
 
 //Disable emojis in WordPress
-add_action( 'init', 'basictheme_disable_emojis' );
-function basictheme_disable_emojis() {
+add_action( 'init', 'healthnews_disable_emojis' );
+function healthnews_disable_emojis() {
 	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 	remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 	remove_action( 'wp_print_styles', 'print_emoji_styles' );
@@ -84,10 +84,10 @@ function basictheme_disable_emojis() {
 	remove_action( 'admin_print_styles', 'print_emoji_styles' );
 	remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
 	remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
-	add_filter( 'tiny_mce_plugins', 'basictheme_disable_emojis_tinymce' );
+	add_filter( 'tiny_mce_plugins', 'healthnews_disable_emojis_tinymce' );
 }
 
-function basictheme_disable_emojis_tinymce( $plugins ) {
+function healthnews_disable_emojis_tinymce( $plugins ) {
 	if ( is_array( $plugins ) ) {
 		return array_diff( $plugins, array( 'wpemoji' ) );
 	} else {

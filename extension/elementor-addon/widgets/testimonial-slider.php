@@ -13,11 +13,11 @@ class BasicTheme_Elementor_Testimonial_Slider extends Widget_Base {
     }
 
     public function get_name(): string {
-        return 'basictheme-testimonial-slider';
+        return 'healthnews-testimonial-slider';
     }
 
     public function get_title(): string {
-        return esc_html__( 'Testimonial Slider', 'basictheme' );
+        return esc_html__( 'Testimonial Slider', 'healthnews' );
     }
 
     public function get_icon(): string {
@@ -30,7 +30,7 @@ class BasicTheme_Elementor_Testimonial_Slider extends Widget_Base {
         $this->start_controls_section(
             'content_section',
             [
-                'label' => esc_html__( 'Content', 'basictheme' ),
+                'label' => esc_html__( 'Content', 'healthnews' ),
                 'tab' => Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -39,9 +39,9 @@ class BasicTheme_Elementor_Testimonial_Slider extends Widget_Base {
 
         $repeater->add_control(
             'list_title', [
-                'label' => esc_html__( 'Name', 'basictheme' ),
+                'label' => esc_html__( 'Name', 'healthnews' ),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__( 'John Doe' , 'basictheme' ),
+                'default' => esc_html__( 'John Doe' , 'healthnews' ),
                 'label_block' => true,
             ]
         );
@@ -49,9 +49,9 @@ class BasicTheme_Elementor_Testimonial_Slider extends Widget_Base {
         $repeater->add_control(
             'list_position',
             [
-                'label'         =>  esc_html__( 'Position', 'basictheme' ),
+                'label'         =>  esc_html__( 'Position', 'healthnews' ),
                 'type'          =>  Controls_Manager::TEXT,
-                'default'       =>  esc_html__( 'Codetic', 'basictheme' ),
+                'default'       =>  esc_html__( 'Codetic', 'healthnews' ),
                 'label_block'   =>  true
             ]
         );
@@ -59,7 +59,7 @@ class BasicTheme_Elementor_Testimonial_Slider extends Widget_Base {
         $repeater->add_control(
             'list_image',
             [
-                'label' => esc_html__( 'Choose Image', 'basictheme' ),
+                'label' => esc_html__( 'Choose Image', 'healthnews' ),
                 'type' => Controls_Manager::MEDIA,
                 'default' => [
                     'url' => Utils::get_placeholder_image_src(),
@@ -70,26 +70,26 @@ class BasicTheme_Elementor_Testimonial_Slider extends Widget_Base {
         $repeater->add_control(
             'list_description',
             [
-                'label' => esc_html__( 'Description', 'basictheme' ),
+                'label' => esc_html__( 'Description', 'healthnews' ),
                 'type' => Controls_Manager::TEXTAREA,
                 'rows' => 10,
-                'default' => esc_html__( 'GEMs are robotics algorithm for modules that built & optimized for NVIDIA AGX Data should underlie every business decision. Data should underlie every business Yet too often some very down the certain routes.', 'basictheme' ),
-                'placeholder' => esc_html__( 'Type your description here', 'basictheme' ),
+                'default' => esc_html__( 'GEMs are robotics algorithm for modules that built & optimized for NVIDIA AGX Data should underlie every business decision. Data should underlie every business Yet too often some very down the certain routes.', 'healthnews' ),
+                'placeholder' => esc_html__( 'Type your description here', 'healthnews' ),
             ]
         );
 
         $this->add_control(
             'list',
             [
-                'label' => esc_html__( 'List', 'basictheme' ),
+                'label' => esc_html__( 'List', 'healthnews' ),
                 'type' => Controls_Manager::REPEATER,
                 'fields' => $repeater->get_controls(),
                 'default' => [
                     [
-                        'list_title' => esc_html__( 'Title #1', 'basictheme' ),
+                        'list_title' => esc_html__( 'Title #1', 'healthnews' ),
                     ],
                     [
-                        'list_title' => esc_html__( 'Title #2', 'basictheme' ),
+                        'list_title' => esc_html__( 'Title #2', 'healthnews' ),
                     ],
                 ],
                 'title_field' => '{{{ list_title }}}',
@@ -102,7 +102,7 @@ class BasicTheme_Elementor_Testimonial_Slider extends Widget_Base {
         $this->start_controls_section(
             'additional_options_section',
             [
-                'label' => esc_html__( 'Additional Options', 'basictheme' ),
+                'label' => esc_html__( 'Additional Options', 'healthnews' ),
                 'tab' => Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -111,9 +111,9 @@ class BasicTheme_Elementor_Testimonial_Slider extends Widget_Base {
             'loop',
             [
                 'type'          =>  Controls_Manager::SWITCHER,
-                'label'         =>  esc_html__('Loop Slider ?', 'basictheme'),
-                'label_off'     =>  esc_html__('No', 'basictheme'),
-                'label_on'      =>  esc_html__('Yes', 'basictheme'),
+                'label'         =>  esc_html__('Loop Slider ?', 'healthnews'),
+                'label_off'     =>  esc_html__('No', 'healthnews'),
+                'label_on'      =>  esc_html__('Yes', 'healthnews'),
                 'return_value'  =>  'yes',
                 'default'       =>  'yes',
             ]
@@ -122,10 +122,10 @@ class BasicTheme_Elementor_Testimonial_Slider extends Widget_Base {
         $this->add_control(
             'autoplay',
             [
-                'label'         =>  esc_html__('Autoplay?', 'basictheme'),
+                'label'         =>  esc_html__('Autoplay?', 'healthnews'),
                 'type'          =>  Controls_Manager::SWITCHER,
-                'label_off'     =>  esc_html__('No', 'basictheme'),
-                'label_on'      =>  esc_html__('Yes', 'basictheme'),
+                'label_off'     =>  esc_html__('No', 'healthnews'),
+                'label_on'      =>  esc_html__('Yes', 'healthnews'),
                 'return_value'  =>  'yes',
                 'default'       =>  'no',
             ]
@@ -134,10 +134,10 @@ class BasicTheme_Elementor_Testimonial_Slider extends Widget_Base {
         $this->add_control(
             'nav',
             [
-                'label'         =>  esc_html__('Nav Slider', 'basictheme'),
+                'label'         =>  esc_html__('Nav Slider', 'healthnews'),
                 'type'          =>  Controls_Manager::SWITCHER,
-                'label_on'      =>  esc_html__('Yes', 'basictheme'),
-                'label_off'     =>  esc_html__('No', 'basictheme'),
+                'label_on'      =>  esc_html__('Yes', 'healthnews'),
+                'label_off'     =>  esc_html__('No', 'healthnews'),
                 'return_value'  =>  'yes',
                 'default'       =>  'yes',
             ]
@@ -146,10 +146,10 @@ class BasicTheme_Elementor_Testimonial_Slider extends Widget_Base {
         $this->add_control(
             'dots',
             [
-                'label'         =>  esc_html__('Dots Slider', 'basictheme'),
+                'label'         =>  esc_html__('Dots Slider', 'healthnews'),
                 'type'          =>  Controls_Manager::SWITCHER,
-                'label_on'      =>  esc_html__('Yes', 'basictheme'),
-                'label_off'     =>  esc_html__('No', 'basictheme'),
+                'label_on'      =>  esc_html__('Yes', 'healthnews'),
+                'label_off'     =>  esc_html__('No', 'healthnews'),
                 'return_value'  =>  'yes',
                 'default'       =>  'yes',
             ]

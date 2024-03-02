@@ -1,7 +1,7 @@
 <?php
-$sticky_menu = basictheme_get_option( 'opt_menu_sticky', '1' );
-$logo = basictheme_get_option( 'opt_general_logo' );
-$cart = basictheme_get_option( 'opt_menu_cart', '1' );
+$sticky_menu = healthnews_get_option( 'opt_menu_sticky', '1' );
+$logo = healthnews_get_option( 'opt_general_logo' );
+$cart = healthnews_get_option( 'opt_menu_cart', '1' );
 ?>
 <header class="global-header <?php echo esc_attr( $sticky_menu == '1' ? 'active-sticky-nav' : '' ); ?>">
     <nav class="site-navigation container">
@@ -39,7 +39,7 @@ $cart = basictheme_get_option( 'opt_menu_cart', '1' );
                 <ul class="main-menu">
                     <li>
                         <a href="<?php echo get_admin_url() . '/nav-menus.php'; ?>">
-							<?php esc_html_e( 'ADD TO MENU', 'basictheme' ); ?>
+							<?php esc_html_e( 'ADD TO MENU', 'healthnews' ); ?>
                         </a>
                     </li>
                 </ul>
@@ -49,7 +49,7 @@ $cart = basictheme_get_option( 'opt_menu_cart', '1' );
 		<?php if ( class_exists( 'Woocommerce' ) && $cart == '1' && ! is_cart() && ! is_checkout() ) : ?>
             <div class="site-navigation__cart d-flex align-items-center">
 				<?php
-				do_action( 'basictheme_woo_shopping_cart' );
+				do_action( 'healthnews_woo_shopping_cart' );
 
 				the_widget( 'WC_Widget_Cart', '' );
 				?>

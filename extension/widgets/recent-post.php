@@ -7,12 +7,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class basictheme_recent_post_widget extends WP_Widget {
+class healthnews_recent_post_widget extends WP_Widget {
 	/* Widget setup */
 	public function __construct() {
 		$widget_ops = array(
 			'classname'   => 'recent-post-widget',
-			'description' => esc_html__( 'A widget show post', 'basictheme' ),
+			'description' => esc_html__( 'A widget show post', 'healthnews' ),
 		);
 
 		parent::__construct( 'recent-post-widget', 'My Theme: Recent Post', $widget_ops );
@@ -107,7 +107,7 @@ class basictheme_recent_post_widget extends WP_Widget {
 	function form( $instance ) {
 
 		$defaults = array(
-			'title' => esc_html__('Recent Post', 'basictheme'),
+			'title' => esc_html__('Recent Post', 'healthnews'),
 			'order' => 'DESC'
 		);
 
@@ -128,7 +128,7 @@ class basictheme_recent_post_widget extends WP_Widget {
         <!-- Widget Title: Text Input -->
         <p>
             <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>">
-				<?php esc_html_e( 'Title:', 'basictheme' ); ?>
+				<?php esc_html_e( 'Title:', 'healthnews' ); ?>
             </label>
 
             <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"
@@ -138,7 +138,7 @@ class basictheme_recent_post_widget extends WP_Widget {
         <!-- Start Select Event Cat -->
         <p>
             <label for="<?php echo esc_attr( $this->get_field_id( 'select_cat' ) ); ?>">
-				<?php esc_attr_e( 'Select Categories:', 'basictheme' ); ?>
+				<?php esc_attr_e( 'Select Categories:', 'healthnews' ); ?>
             </label>
 
             <select id="<?php echo esc_attr( $this->get_field_id( 'select_cat' ) ); ?>"
@@ -146,7 +146,7 @@ class basictheme_recent_post_widget extends WP_Widget {
                     size="10" multiple>
 
                 <option value="0" <?php echo( in_array( 0, $select_cat ) ? 'selected="selected"' : '' ); ?>>
-					<?php esc_html_e( 'All Category', 'basictheme' ); ?>
+					<?php esc_html_e( 'All Category', 'healthnews' ); ?>
                 </option>
 
 				<?php
@@ -169,17 +169,17 @@ class basictheme_recent_post_widget extends WP_Widget {
         <!-- Start Order -->
         <p>
             <label for="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>">
-				<?php esc_html_e( 'Order:', 'basictheme' ); ?>
+				<?php esc_html_e( 'Order:', 'healthnews' ); ?>
             </label>
 
             <select id="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>"
                     name="<?php echo $this->get_field_name( 'order' ) ?>" class="widefat">
                 <option value="ASC" <?php echo ( $order == 'ASC' ) ? 'selected' : ''; ?>>
-					<?php esc_html_e( 'ASC', 'basictheme' ); ?>
+					<?php esc_html_e( 'ASC', 'healthnews' ); ?>
                 </option>
 
                 <option value="DESC" <?php echo ( $order == 'DESC' ) ? 'selected' : ''; ?>>
-					<?php esc_html_e( 'DESC', 'basictheme' ); ?>
+					<?php esc_html_e( 'DESC', 'healthnews' ); ?>
                 </option>
             </select>
         </p>
@@ -187,25 +187,25 @@ class basictheme_recent_post_widget extends WP_Widget {
         <!-- Start OrderBy -->
         <p>
             <label for="<?php echo esc_attr( $this->get_field_id( 'order_by' ) ); ?>">
-				<?php esc_html_e( 'Order:', 'basictheme' ); ?>
+				<?php esc_html_e( 'Order:', 'healthnews' ); ?>
             </label>
 
             <select id="<?php echo esc_attr( $this->get_field_id( 'order_by' ) ); ?>"
                     name="<?php echo $this->get_field_name( 'order_by' ) ?>" class="widefat">
                 <option value="ID" <?php echo ( $order_by == 'ID' ) ? 'selected' : ''; ?>>
-					<?php esc_html_e( 'ID', 'basictheme' ); ?>
+					<?php esc_html_e( 'ID', 'healthnews' ); ?>
                 </option>
 
                 <option value="date" <?php echo ( $order_by == 'date' ) ? 'selected' : ''; ?>>
-					<?php esc_html_e( 'Date', 'basictheme' ); ?>
+					<?php esc_html_e( 'Date', 'healthnews' ); ?>
                 </option>
 
                 <option value="title" <?php echo ( $order_by == 'title' ) ? 'selected' : ''; ?>>
-					<?php esc_html_e( 'Title', 'basictheme' ); ?>
+					<?php esc_html_e( 'Title', 'healthnews' ); ?>
                 </option>
 
                 <option value="rand" <?php echo ( $order_by == 'rand' ) ? 'selected' : ''; ?>>
-					<?php esc_html_e( 'Rand', 'basictheme' ); ?>
+					<?php esc_html_e( 'Rand', 'healthnews' ); ?>
                 </option>
             </select>
         </p>
@@ -213,7 +213,7 @@ class basictheme_recent_post_widget extends WP_Widget {
         <!-- Start Number Post Show -->
         <p>
             <label for="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>">
-				<?php esc_html_e( 'Number of posts to show:', 'basictheme' ); ?>
+				<?php esc_html_e( 'Number of posts to show:', 'healthnews' ); ?>
             </label>
 
             <input id="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>" class="tiny-text"
@@ -248,8 +248,8 @@ class basictheme_recent_post_widget extends WP_Widget {
 }
 
 // Register widget
-function basictheme_recent_post_widget_register() {
-	register_widget( 'basictheme_recent_post_widget' );
+function healthnews_recent_post_widget_register() {
+	register_widget( 'healthnews_recent_post_widget' );
 }
 
-add_action( 'widgets_init', 'basictheme_recent_post_widget_register' );
+add_action( 'widgets_init', 'healthnews_recent_post_widget_register' );
