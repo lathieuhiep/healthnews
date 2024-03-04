@@ -3,6 +3,7 @@ $sticky_menu = healthnews_get_option( 'opt_menu_sticky', '1' );
 $logo = healthnews_get_option( 'opt_general_logo' );
 $hotline = healthnews_get_opt_contact_hotline();
 $email = healthnews_get_opt_contact_email();
+$link_facebook = healthnews_get_opt_link_facebook();
 ?>
 
 <header class="global-header">
@@ -66,3 +67,19 @@ $email = healthnews_get_opt_contact_email();
         </div>
     </div>
 </nav>
+
+<div class="header-action-box">
+    <div class="container">
+        <div class="grid-layout d-flex justify-content-between align-items-center">
+            <div class="item"></div>
+
+            <div class="item right-box d-flex align-items-center">
+                <a class="link-facebook d-inline-block me-3" href="<?php echo esc_url($link_facebook); ?>" target="_blank">
+                    <i class="fa-brands fa-square-facebook"></i>
+                </a>
+
+	            <?php get_search_form(); ?>
+            </div>
+        </div>
+    </div>
+</div>

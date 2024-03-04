@@ -107,6 +107,13 @@ if ( class_exists( 'CSF' ) ) {
                 'title'   => esc_html__( 'Email', 'healthnews' ),
                 'default' => 'mail@suckhoedanang.com'
             ),
+
+	        array(
+		        'id'      => 'opt_general_link_facebook',
+		        'type'    => 'text',
+		        'title'   => esc_html__( 'Facebook', 'healthnews' ),
+		        'default' => '#'
+	        ),
         )
     ) );
 

@@ -302,6 +302,52 @@
   }
 }
 
+.header-action-box {
+  margin-top: 1.6rem;
+
+  .item {
+    .link-facebook {
+      font-size: 3.2rem;
+      line-height: 3rem;
+      color: #3b5998;
+    }
+
+    .search-form {
+      position: relative;
+
+      .search-field {
+        padding: 0 3rem 0 1rem;
+        line-height: 3rem;
+      }
+
+      .search-submit {
+        padding: 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: transparent;
+        width: 3rem;
+
+        &:before {
+          position: absolute;
+          content: "\f002";
+          top: 50%;
+          color: #3b5998;
+          font-family: $font-awesome;
+          font-weight: 900;
+          font-size: 1.4rem;
+          transform: translate(-50%, -50%);
+        }
+
+        .search-reader-text {
+          font-size: 0;
+        }
+      }
+    }
+  }
+}
+
 @media (min-width: 992px) {
   .admin-bar {
     .active-sticky-nav {
