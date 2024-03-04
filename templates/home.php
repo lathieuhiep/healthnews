@@ -8,7 +8,7 @@ get_header();
 <div class="tpl-home-warp">
 	<div class="container">
 		<div class="row">
-			<div class="col-12 col-md-9">
+			<div class="col-12 col-md-8">
                 <!-- new-posts -->
 				<?php
 				$new_post_ids = array();
@@ -143,7 +143,7 @@ get_header();
 
 			<?php if( is_active_sidebar( 'sidebar-main' ) ): ?>
 
-                <aside class="col-12 col-md-3 site-sidebar">
+                <aside class="col-12 col-md-4 site-sidebar">
 					<?php dynamic_sidebar( 'sidebar-main' ); ?>
                 </aside>
 
