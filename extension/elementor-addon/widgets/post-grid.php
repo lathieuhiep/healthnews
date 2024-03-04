@@ -8,7 +8,6 @@ if (!defined('ABSPATH')) exit;
 
 class BasicTheme_Elementor_Post_Grid extends Widget_Base
 {
-
     public function get_categories(): array {
         return array('my-theme');
     }
@@ -42,7 +41,6 @@ class BasicTheme_Elementor_Post_Grid extends Widget_Base
                 'label' => esc_html__('Select Category', 'healthnews'),
                 'type' => Controls_Manager::SELECT2,
                 'options' => healthnews_check_get_cat('category'),
-                'multiple' => true,
                 'label_block' => true
             ]
         );
@@ -52,7 +50,7 @@ class BasicTheme_Elementor_Post_Grid extends Widget_Base
             [
                 'label' => esc_html__('Number of Posts', 'healthnews'),
                 'type' => Controls_Manager::NUMBER,
-                'default' => 6,
+                'default' => 5,
                 'min' => 1,
                 'max' => 100,
                 'step' => 1,
@@ -80,68 +78,10 @@ class BasicTheme_Elementor_Post_Grid extends Widget_Base
             [
                 'label' => esc_html__('Order', 'healthnews'),
                 'type' => Controls_Manager::SELECT,
-                'default' => 'ASC',
+                'default' => 'DESC',
                 'options' => [
                     'ASC' => esc_html__('Ascending', 'healthnews'),
                     'DESC' => esc_html__('Descending', 'healthnews'),
-                ],
-            ]
-        );
-
-        $this->end_controls_section();
-
-        // Content layout
-        $this->start_controls_section(
-            'content_layout',
-            [
-                'label' => esc_html__('Layout Settings', 'healthnews'),
-                'tab' => Controls_Manager::TAB_CONTENT,
-            ]
-        );
-
-        $this->add_control(
-            'column_number',
-            [
-                'label' => esc_html__('Column', 'healthnews'),
-                'type' => Controls_Manager::SELECT,
-                'default' => 3,
-                'options' => [
-                    1 => esc_html__('1 Column', 'healthnews'),
-                    2 => esc_html__('2 Column', 'healthnews'),
-                    3 => esc_html__('3 Column', 'healthnews'),
-                    4 => esc_html__('4 Column', 'healthnews'),
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'show_excerpt',
-            [
-                'label' => esc_html__('Show excerpt', 'healthnews'),
-                'type' => Controls_Manager::CHOOSE,
-                'options' => [
-                    'show' => [
-                        'title' => esc_html__('Yes', 'healthnews'),
-                        'icon' => 'eicon-check',
-                    ],
-
-                    'hide' => [
-                        'title' => esc_html__('No', 'healthnews'),
-                        'icon' => 'eicon-ban',
-                    ]
-                ],
-                'default' => 'show'
-            ]
-        );
-
-        $this->add_control(
-            'excerpt_length',
-            [
-                'label' => esc_html__('Excerpt Words', 'healthnews'),
-                'type' => Controls_Manager::NUMBER,
-                'default' => '10',
-                'condition' => [
-                    'show_excerpt' => 'show',
                 ],
             ]
         );
@@ -290,13 +230,19 @@ class BasicTheme_Elementor_Post_Grid extends Widget_Base
 
     }
 
-    protected function render(): void {
+    protected function render() {
 
         $settings = $this->get_settings_for_display();
         $cat_post = $settings['select_cat'];
         $limit_post = $settings['limit'];
         $order_by_post = $settings['order_by'];
         $order_post = $settings['order'];
+
+        if ( empty( $cat_post ) ) {
+            return;
+        }
+
+	    $category_name = get_cat_name($cat_post);
 
         // Query
         $args = array(
@@ -311,53 +257,89 @@ class BasicTheme_Elementor_Post_Grid extends Widget_Base
         $query = new WP_Query($args);
 
         if ($query->have_posts()) :
-
-            ?>
+        ?>
 
             <div class="element-post-grid">
-                <div class="row row-cols-sm-2 row-cols-md-3 row-cols-lg-<?php echo esc_attr( $settings['column_number'] ); ?>">
-                    <?php while ($query->have_posts()): $query->the_post(); ?>
+                <h3 class="cat-name">
+                    <a href="<?php echo esc_url( get_category_link($cat_post) ); ?>"><?php echo esc_html( $category_name ); ?></a>
+                </h3>
 
-                        <div class="col">
-                            <div class="item-post">
-                                <div class="item-post__thumbnail">
+                <div class="grid-layout">
+                    <?php
+                    $i = 1;
+                    while ($query->have_posts()): $query->the_post();
+	                    $count = $query->post_count;
+                    ?>
+
+                    <?php if ( $i == 1 ) : ?>
+                        <div class="item item-featured">
+                            <div class="post">
+                                <div class="post__thumbnail">
                                     <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                        <?php
-                                        if (has_post_thumbnail()) :
-                                            the_post_thumbnail('large');
-                                        else:
-                                            ?>
+				                        <?php
+				                        if (has_post_thumbnail()) :
+					                        the_post_thumbnail('large');
+				                        else:
+					                        ?>
                                             <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/no-image.png')) ?>"
                                                  alt="<?php the_title(); ?>"/>
-                                        <?php endif; ?>
+				                        <?php endif; ?>
                                     </a>
                                 </div>
 
-                                <h2 class="item-post__title">
+                                <h2 class="post__title">
                                     <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                        <?php the_title(); ?>
+				                        <?php the_title(); ?>
                                     </a>
                                 </h2>
 
-                                <?php if ($settings['show_excerpt'] == 'show') : ?>
-
-                                    <div class="item-post__content">
-                                        <p>
-                                            <?php
-                                            if (has_excerpt()) :
-                                                echo esc_html(wp_trim_words(get_the_excerpt(), $settings['excerpt_length'], '...'));
-                                            else:
-                                                echo esc_html(wp_trim_words(get_the_content(), $settings['excerpt_length'], '...'));
-                                            endif;
-                                            ?>
-                                        </p>
-                                    </div>
-
-                                <?php endif; ?>
+                                <div class="post__content">
+                                    <p>
+				                        <?php
+				                        if (has_excerpt()) :
+					                        echo esc_html(wp_trim_words(get_the_excerpt(), 50, '...'));
+				                        else:
+					                        echo esc_html(wp_trim_words(get_the_content(), 50, '...'));
+				                        endif;
+				                        ?>
+                                    </p>
+                                </div>
                             </div>
                         </div>
+                    <?php endif; ?>
 
-                    <?php endwhile;
+                    <?php if ( $i == 2 ) : ?>
+                        <div class="item item-list">
+                    <?php endif; ?>
+
+                    <?php if ( $i >= 2 ) : ?>
+                        <div class="post">
+                            <div class="post__thumbnail">
+                                <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                                    <?php
+                                    if (has_post_thumbnail()) :
+                                        the_post_thumbnail('large');
+                                    else:
+                                        ?>
+                                        <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/no-image.png')) ?>"
+                                             alt="<?php the_title(); ?>"/>
+                                    <?php endif; ?>
+                                </a>
+                            </div>
+
+                            <h2 class="post__title">
+                                <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                                    <?php the_title(); ?>
+                                </a>
+                            </h2>
+                        </div>
+                    <?php endif; ?>
+
+                    <?php if ($i == $count): ?>
+                        </div>
+                    <?php endif; ?>
+
+                    <?php $i++; endwhile;
                     wp_reset_postdata(); ?>
                 </div>
             </div>

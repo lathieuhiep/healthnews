@@ -13,6 +13,7 @@ get_template_part( 'components/inc', 'breadcrumbs' );
             <div class="<?php echo esc_attr( $class_col_content ); ?>">
                 <?php
                 if ( have_posts() ) : while (have_posts()) : the_post();
+	                healthnews_update_post_views_count();
 
                     get_template_part( 'template-parts/post/content','single' );
 

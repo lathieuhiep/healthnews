@@ -264,7 +264,7 @@ function healthnews_get_social_url(): void {
         endforeach;
     endif;
 }
-
+//
 function healthnews_preg_replace_ony_number($string): string|null
 {
     $number = '';
@@ -275,3 +275,20 @@ function healthnews_preg_replace_ony_number($string): string|null
 
     return $number;
 }
+
+// create meta post views count
+function healthnews_add_post_views_count_field($post_id): void {
+	add_post_meta($post_id, 'post_views_count', 0, true);
+}
+add_action('publish_post', 'healthnews_add_post_views_count_field');
+
+// update post views count
+function healthnews_update_post_views_count(): void {
+	$post_id = get_the_ID();
+
+	if ($post_id) {
+		$current_views = (int)get_post_meta($post_id, 'post_views_count', true);
+		update_post_meta($post_id, 'post_views_count', $current_views + 1);
+	}
+}
+

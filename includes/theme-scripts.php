@@ -42,6 +42,12 @@ function healthnews_register_front_end() {
 	// style theme
 	wp_enqueue_style( 'healthnews-style', get_theme_file_uri( '/assets/css/style-theme.min.css' ), array(), healthnews_get_version_theme() );
 
+	// page template home
+	if ( is_page_template('templates/home.php') ) {
+		wp_enqueue_style( 'scrollbar', get_theme_file_uri( '/assets/libs/scrollbar/jquery.scrollbar.css' ), array(), '' );
+		wp_enqueue_style( 'tpl-home', get_theme_file_uri( '/assets/css/templates/tpl-home.min.css' ), array(), healthnews_get_version_theme() );
+	}
+
 	// style post
 	if ( healthnews_is_blog() ) {
 		wp_enqueue_style( 'category-post', get_theme_file_uri( '/assets/css/post-type/post/archive.min.css' ), array(), healthnews_get_version_theme() );
@@ -60,6 +66,12 @@ function healthnews_register_front_end() {
 
 	// bootstrap js
 	wp_enqueue_script( 'bootstrap', get_theme_file_uri( '/assets/libs/bootstrap/bootstrap.min.js' ), array('jquery'), '5.2.3', true );
+
+	// page template home
+	if ( is_page_template('templates/home.php') ) {
+		wp_enqueue_script( 'scrollbar', get_theme_file_uri( '/assets/libs/scrollbar/jquery.scrollbar.min.js' ), array('jquery'), '', true );
+		wp_enqueue_script( 'tpl-home', get_theme_file_uri( '/assets/js/template-home.min.js' ), array('jquery'), healthnews_get_version_theme(), true );
+	}
 
 	// comment reply
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

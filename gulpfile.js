@@ -193,6 +193,23 @@ function buildStylesCustomPostType() {
         .pipe(browserSync.stream());
 }
 
+// Task build style templates
+function buildStylesTemplates() {
+    return src(`${pathAssets}/scss/templates/*.scss`)
+        .pipe(sourcemaps.init())
+        .pipe(sass().on('error', sass.logError))
+        .pipe(sourcemaps.write())
+        .pipe(dest(`${pathAssets}/css/templates/`))
+        .pipe(sourcemaps.init())
+        .pipe(minifyCss({
+            level: {1: {specialComments: 0}}
+        }))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(sourcemaps.write())
+        .pipe(dest(`${pathAssets}/css/templates/`))
+        .pipe(browserSync.stream());
+}
+
 // buildJSTheme
 function buildJSTheme() {
     return src([
@@ -221,6 +238,7 @@ async function buildProject() {
     await buildStylesTheme()
     await buildStylesElementor()
     await buildStylesCustomPostType()
+    await buildStylesTemplates()
 
     await buildJSTheme()
 }
@@ -251,6 +269,11 @@ function watchTask() {
         `${pathAssets}/scss/variables-site/*.scss`,
         `${pathAssets}/scss/post-type/*/**.scss`
     ], buildStylesCustomPostType)
+
+    watch([
+        `${pathAssets}/scss/variables-site/*.scss`,
+        `${pathAssets}/scss/templates/*.scss`
+    ], buildStylesTemplates)
 
     watch([`${pathAssets}/js/*.js`, `!${pathAssets}/js/*.min.js`], buildJSTheme)
 

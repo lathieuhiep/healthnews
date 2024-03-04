@@ -15,12 +15,12 @@
         /* Start back top */
         $('.btn-back-top').on( 'click', function (e) {
             e.preventDefault();
-            $('html').scrollTop(0);
-        } );
+            $('html').scrollTop(0)
+        } )
         /* End back top */
 
         /* btn mobile Start*/
-        let subMenuToggle  =   $('.sub-menu-toggle');
+        let subMenuToggle  =   $('.sub-menu-toggle')
 
         if ( subMenuToggle.length ) {
 
@@ -42,21 +42,20 @@
         /* btn mobile End */
 
         /* Start Gallery Single */
-        $( document ).general_owlCarousel_custom( '.site-post-slides' );
+        $( document ).general_owlCarousel_custom( '.site-post-slides' )
         /* End Gallery Single */
 
+        // scroll new posts tpl home
+        scrollNewPostsTPLHome()
     });
 
     // loading
     $( window ).on( "load", function() {
-
         $( '#site-loading' ).remove();
-
     });
 
     // scroll event
     $( window ).scroll( function() {
-
         if ( timer_clear ) clearTimeout(timer_clear);
 
         timer_clear = setTimeout( function() {
@@ -105,6 +104,11 @@
             } )
 
         }
+
+    }
+
+    // function scroll new posts tpl home
+    const scrollNewPostsTPLHome = () => {
 
     }
 

@@ -1,29 +1,58 @@
 .element-post-grid {
-  .title {
-    text-align: center;
+  .cat-name {
+    margin-bottom: 1.8rem;
+    padding-bottom: .3rem;
+    font-size: 2.4rem;
+    border-bottom: 1px solid #FFB89F;
+
+    a {
+      color: #dd2719;
+    }
   }
 
-  .item-post {
-    margin-bottom: 3rem;
+  .grid-layout {
+    display: grid;
+    grid-gap: 2.4rem;
+    grid-template-columns: repeat(2, 1fr);
 
-    &__thumbnail {
-      margin-bottom: 1.5rem;
+    .item {
+      .post {
+        &__thumbnail {
+          margin-bottom: 1rem;
+        }
 
-      a {
-        display: block;
+        &__title {
+          font-size: 1.6rem;
+        }
+
+        &__content {
+          font-size: 1.4rem;
+        }
       }
-    }
 
-    &__title {
-      font-size: 1.8rem;
-    }
+      &.item-list {
+        display: grid;
+        grid-gap: 1.2rem;
+        grid-template-columns: repeat(2, 1fr);
 
-    &__content {
-      margin-top: 1.5rem;
+        .post {
+          &__thumbnail {
+            height: 10rem;
+            overflow: hidden;
 
-      p {
-        margin: 0;
-        font-size: 1.4rem;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+
+          &__title {
+            margin: 0;
+            font-size: 1.4rem;
+            font-weight: 400;
+          }
+        }
       }
     }
   }

@@ -5,7 +5,7 @@
         <span class="screen-reader-text"><?php echo _x( 'Search for:', 'label', 'healthnews' ); ?></span>
     </label>
 
-    <input type="search" id="<?php echo $healthnews_unique_id; ?>" class="search-field" placeholder="<?php echo esc_attr_x( 'Search &hellip;', 'placeholder', 'healthnews' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
+    <input type="search" id="<?php echo $healthnews_unique_id; ?>" class="search-field" placeholder="<?php echo esc_attr_x( 'Tìm kiếm &hellip;', 'placeholder', 'healthnews' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
 
     <button type="submit" class="btn search-submit">
         <span class="search-reader-text">
