@@ -10,15 +10,15 @@ function healthnews_widget_registration($name, $id, $description = ''): void {
 		'description' => $description,
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget' => '</section>',
-		'before_title' => '<h2 class="widget-title">',
-		'after_title' => '</h2>',
+		'before_title' => '<h2 class="widget-title"><span>',
+		'after_title' => '</span></h2>',
 	));
 }
 
 function healthnews_multiple_widget_init(): void {
 	healthnews_widget_registration( esc_html__('Sidebar Main', 'healthnews'), 'sidebar-main' );
-	healthnews_widget_registration( esc_html__('Sidebar Shop', 'healthnews'), 'sidebar-wc', esc_html__('Display sidebar on page shop.', 'healthnews') );
-	healthnews_widget_registration( esc_html__('Sidebar Product', 'healthnews'), 'sidebar-wc-product', esc_html__('Display sidebar on page single product.', 'healthnews') );
+
+	healthnews_widget_registration( esc_html__('Sidebar Single', 'healthnews'), 'sidebar-single', esc_html__('Display sidebar on single post.', 'healthnews') );
 
 	healthnews_widget_registration( esc_html__('Sidebar Footer Column 1', 'healthnews'), 'sidebar-footer-column-1' );
 	healthnews_widget_registration( esc_html__('Sidebar Footer Column 2', 'healthnews'), 'sidebar-footer-column-2' );

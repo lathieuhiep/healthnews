@@ -57,6 +57,10 @@ function healthnews_register_front_end() {
 		wp_enqueue_style( 'single-post', get_theme_file_uri( '/assets/css/post-type/post/single.min.css' ), array(), healthnews_get_version_theme() );
 	}
 
+	if ( is_search() ) {
+		wp_enqueue_style( 'search-post', get_theme_file_uri( '/assets/css/post-type/post/search.min.css' ), array(), healthnews_get_version_theme() );
+	}
+
 	// style page 404
 	if ( is_404() ) {
 		wp_enqueue_style( 'page-404', get_theme_file_uri( '/assets/css/page-templates/page-404.min.css' ), array(), healthnews_get_version_theme() );

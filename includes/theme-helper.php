@@ -106,8 +106,8 @@ function healthnews_pagination(): void {
 	the_posts_pagination( array(
 		'type'               => 'list',
 		'mid_size'           => 2,
-		'prev_text'          => esc_html__( 'Previous', 'healthnews' ),
-		'next_text'          => esc_html__( 'Next', 'healthnews' ),
+		'prev_text'          => '<i class="fa-solid fa-arrow-left"></i>',
+		'next_text'          => '<i class="fa-solid fa-arrow-right"></i>',
 		'screen_reader_text' => '&nbsp;',
 	) );
 }
@@ -116,8 +116,8 @@ function healthnews_pagination(): void {
 function healthnews_paging_nav_query( $query ): void {
 
 	$args = array(
-		'prev_text' => esc_html__( ' Previous', 'healthnews' ),
-		'next_text' => esc_html__( 'Next', 'healthnews' ),
+		'prev_text' => '<i class="fa-solid fa-arrow-left"></i>',
+		'next_text' => '<i class="fa-solid fa-arrow-right"></i>',
 		'current'   => max( 1, get_query_var( 'paged' ) ),
 		'total'     => $query->max_num_pages,
 		'type'      => 'list',
@@ -148,7 +148,7 @@ function healthnews_col_use_sidebar( $option_sidebar, $active_sidebar ): string
 			$class_position_sidebar = ' order-1';
 		endif;
 
-		$class_col_content = 'col-12 col-md-8 col-lg-9' . $class_position_sidebar;
+		$class_col_content = 'col-12 col-md-8 col-lg-8' . $class_position_sidebar;
 	else:
 		$class_col_content = 'col-md-12';
 	endif;
@@ -158,7 +158,7 @@ function healthnews_col_use_sidebar( $option_sidebar, $active_sidebar ): string
 
 function healthnews_col_sidebar(): string
 {
-	return 'col-12 col-md-4 col-lg-3';
+	return 'col-12 col-md-4 col-lg-4';
 }
 
 // Post Meta
@@ -166,23 +166,8 @@ function healthnews_post_meta(): void {
 	?>
 
 	<div class="post-meta">
-        <span class="post-meta__author">
-            <?php esc_html_e( 'Author:', 'healthnews' ); ?>
-
-            <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
-                <?php the_author(); ?>
-            </a>
-        </span>
-
 		<span class="post-meta__date">
-            <?php esc_html_e( 'Post date: ', 'healthnews' );
-            the_date(); ?>
-        </span>
-
-		<span class="post-meta__comments">
-            <?php
-            comments_popup_link( '0 ' . esc_html__( 'Comment', 'healthnews' ), '1 ' . esc_html__( 'Comment', 'healthnews' ), '% ' . esc_html__( 'Comments', 'healthnews' ) );
-            ?>
+            <?php the_date('l, d/m/Y'); ?>
         </span>
 	</div>
 

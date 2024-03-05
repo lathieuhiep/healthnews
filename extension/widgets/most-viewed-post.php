@@ -27,7 +27,8 @@ class healthnews_most_viewed_post_widget extends WP_Widget {
 			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
 		}
 
-		$limit   = $instance['number'] ?? 8;
+        $style = $instance['style'] ?? 1;
+		$limit = $instance['number'] ?? 8;
 
 		$post_arg = array(
 			'post_type'           => 'post',
@@ -42,15 +43,21 @@ class healthnews_most_viewed_post_widget extends WP_Widget {
 		if ( $post_query->have_posts() ) :
 
 			?>
-			<ul class="most-viewed-post-widget__list">
+			<ul class="most-viewed-post-widget__list style-<?php echo esc_attr( $style ); ?>">
 				<?php
 				while ( $post_query->have_posts() ) :
 					$post_query->the_post();
 				?>
-					<li class="title">
+					<li class="item">
 						<a href="<?php the_permalink(); ?>" title="<?php the_title() ?>">
 							<?php the_title(); ?>
 						</a>
+
+                        <?php if ( $style == '2' ) : ?>
+                        <p class="thumbnail">
+                            <?php the_post_thumbnail('medium'); ?>
+                        </p>
+                        <?php endif; ?>
 					</li>
 				<?php
 				endwhile;
@@ -70,22 +77,36 @@ class healthnews_most_viewed_post_widget extends WP_Widget {
 	 */
 	function form( $instance ) {
 		$defaults = array(
+            'style' => '1',
 			'title' => esc_html__('Đọc nhiều', 'healthnews'),
 			'order' => 'DESC'
 		);
 
 		$instance = wp_parse_args( (array) $instance, $defaults );
 
+		$style      = $instance['style'];
 		$number     = isset( $instance['number'] ) ? absint( $instance['number'] ) : 8;
 		$order      = $instance['order'];
 		$order_by   = $instance['order_by'] ?? 'ID';
+    ?>
 
-		$terms = get_terms( array(
-			'taxonomy' => 'category',
-			'orderby'  => 'id'
-		) );
+        <!-- style post -->
+        <p>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'style' ) ); ?>">
+				<?php esc_html_e( 'Kiểu bài viết:', 'healthnews' ); ?>
+            </label>
 
-		?>
+            <select id="<?php echo esc_attr( $this->get_field_id( 'style' ) ); ?>"
+                    name="<?php echo $this->get_field_name( 'style' ) ?>" class="widefat">
+                <option value="1" <?php echo ( $style == '1' ) ? 'selected' : ''; ?>>
+					<?php esc_html_e( 'Kiểu 1', 'healthnews' ); ?>
+                </option>
+
+                <option value="2" <?php echo ( $style == '2' ) ? 'selected' : ''; ?>>
+					<?php esc_html_e( 'Kiểu 2', 'healthnews' ); ?>
+                </option>
+            </select>
+        </p>
 
 		<!-- Widget Title: Text Input -->
 		<p>
@@ -167,6 +188,7 @@ class healthnews_most_viewed_post_widget extends WP_Widget {
 	function update( $new_instance, $old_instance ) {
 		$instance = array();
 
+		$instance['style']      = $new_instance['style'];
 		$instance['title']      = strip_tags( $new_instance['title'] );
 		$instance['order']      = $new_instance['order'];
 		$instance['order_by']   = $new_instance['order_by'];

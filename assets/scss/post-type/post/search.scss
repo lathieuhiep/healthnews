@@ -1,0 +1,21 @@
+@import "../../variables-site/variables";
+
+.site-page-search {
+  .post-list {
+    .item {
+      display: grid;
+      grid-gap: 2.4rem;
+      grid-template-columns: 20rem 1fr;
+
+      ~ .item {
+        margin-top: 2.4rem;
+      }
+
+      &__content {
+        .title {
+          font-size: 1.6rem;
+        }
+      }
+    }
+  }
+}

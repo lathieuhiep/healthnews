@@ -17,7 +17,7 @@ if ( !empty( $term_ids ) ):
     ?>
         <div class="related-posts">
             <h3 class="related-posts__title">
-                <?php esc_html_e('Related Post', 'healthnews'); ?>
+                <?php esc_html_e('Các tin khác', 'healthnews'); ?>
             </h3>
 
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
@@ -28,28 +28,16 @@ if ( !empty( $term_ids ) ):
                     <div class="col item">
                         <div class="related-post-item">
                             <?php if (has_post_thumbnail()) : ?>
-                                <figure class="post-image mb-2">
+                                <figure class="post-image mb-3">
                                     <?php the_post_thumbnail('large'); ?>
                                 </figure>
                             <?php endif; ?>
 
-                            <h4 class="title-post">
+                            <h4 class="title-post m-0">
                                 <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
                                     <?php the_title(); ?>
                                 </a>
                             </h4>
-
-                            <div class="excerpt-post">
-                                <p>
-                                    <?php
-                                    if (has_excerpt()) :
-                                        echo wp_trim_words(get_the_excerpt(), 15, '...');
-                                    else:
-                                        echo wp_trim_words(get_the_content(), 15, '...');
-                                    endif;
-                                    ?>
-                                </p>
-                            </div>
                         </div>
                     </div>
                 <?php

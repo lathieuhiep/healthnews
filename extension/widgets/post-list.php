@@ -27,14 +27,17 @@ class healthnews_post_list_widget extends WP_Widget {
 	function widget( $args, $instance ) {
 		echo $args['before_widget'];
 
+		$style_title = $instance['style_title'] ?? 1;
+
 		if ( ! empty( $instance['title'] ) ) {
         ?>
-            <h2 class="widget-title style-<?php echo esc_attr($instance['style_title']); ?>">
+            <h2 class="widget-title style-<?php echo esc_attr( $style_title ); ?>">
                 <span><?php echo apply_filters( 'widget_title', $instance['title'] ) ?></span>
             </h2>
         <?php
 		}
 
+		$style_post = $instance['style_post'] ?? 1;
 		$limit   = $instance['number'] ?? 5;
 		$cat_ids = ! empty( $instance['select_cat'] ) ? $instance['select_cat'] : array( '0' );
 
@@ -62,7 +65,7 @@ class healthnews_post_list_widget extends WP_Widget {
 		if ( $post_query->have_posts() ) :
 
         ?>
-            <div class="post-list-warp style-<?php echo esc_attr($instance['style_post']); ?>">
+            <div class="post-list-warp style-<?php echo esc_attr( $style_post ); ?>">
 				<?php
 				while ( $post_query->have_posts() ) :
 					$post_query->the_post();
@@ -71,7 +74,7 @@ class healthnews_post_list_widget extends WP_Widget {
                         <div class="image">
 							<?php
 							if ( has_post_thumbnail() ):
-								the_post_thumbnail( 'medium' );
+								the_post_thumbnail( 'large' );
 							else:
 								?>
                                 <img src="<?php echo esc_url( get_theme_file_uri( '/assets/images/no-image.png' ) ); ?>"
@@ -164,6 +167,10 @@ class healthnews_post_list_widget extends WP_Widget {
 
                 <option value="3" <?php echo ( $style_post == '3' ) ? 'selected' : ''; ?>>
 		            <?php esc_html_e( 'Kiểu 3', 'healthnews' ); ?>
+                </option>
+
+                <option value="4" <?php echo ( $style_post == '4' ) ? 'selected' : ''; ?>>
+		            <?php esc_html_e( 'Kiểu 4', 'healthnews' ); ?>
                 </option>
             </select>
         </p>

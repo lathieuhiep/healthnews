@@ -201,27 +201,57 @@
 
   .most-viewed-post-widget {
     &__list {
-      .title {
-        padding-left: 1.2rem;
+      .item {
         position: relative;
         font-size: 1.4rem;
         font-weight: 500;
         padding-bottom: 1rem;
-        border-bottom: 1px dotted #bcbabb;
-
-        &:before {
-          position: absolute;
-          content: "";
-          width: .4rem;
-          height: .4rem;
-          top: .8rem;
-          left: 0;
-          background-color: #5D5D5D;
-        }
 
         &:last-child {
           padding-bottom: 0;
-          border-bottom: 0;
+        }
+      }
+
+      &.style-1 {
+        .item {
+          padding-left: 1.2rem;
+          border-bottom: 1px dotted #bcbabb;
+
+          &:before {
+            position: absolute;
+            content: "";
+            width: .4rem;
+            height: .4rem;
+            top: .8rem;
+            left: 0;
+            background-color: #5D5D5D;
+          }
+
+          &:last-child {
+            border-bottom: 0;
+          }
+        }
+      }
+
+      &.style-2 {
+        .item {
+          padding-bottom: 1.2rem;
+          margin-bottom: 1.2rem;
+          display: grid;
+          grid-gap: 1.2rem;
+          grid-template-columns: 1fr 12rem;
+          border-bottom: 1px solid #bcbabb;
+
+          .thumbnail {
+            height: 6.2rem;
+            overflow: hidden;
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
         }
       }
     }
@@ -355,6 +385,36 @@
               }
             }
           }
+        }
+      }
+    }
+  }
+}
+
+.site-sidebar-single {
+  .widget {
+    .widget-title {
+      padding: 0;
+      color: #ffffff;
+      font-weight: 400;
+      font-size: 1.5rem;
+      border-color: #2993d1;
+
+      span {
+        position: relative;
+        display: inline-block;
+        padding: .5rem 1rem .2rem;
+        background-color: #2993d1;
+
+        &:after {
+          content: "";
+          position: absolute;
+          right: -2rem;
+          top: 0;
+          bottom: 0;
+          height: 100%;
+          border-bottom: 2.6rem solid #2993d1;
+          border-right: 2rem solid transparent;
         }
       }
     }

@@ -1,84 +1,97 @@
-<?php
-$sidebar = healthnews_get_option('opt_post_cat_sidebar_position', 'right');
-$per_row = healthnews_get_option('opt_post_cat_per_row', '2');
-
-$class_col_content = healthnews_col_use_sidebar($sidebar, 'sidebar-main');
-
-$grid_col = 'grid-col-' . $per_row;
-if ( $sidebar !== 'hide' ) {
-    $grid_col = 'grid-sidebar-col-' . $per_row;
-}
-?>
-
-<div class="site-container archive-post-warp">
+<div class="site-container site-page-archive">
     <div class="container">
         <div class="row">
-            <div class="<?php echo esc_attr( $class_col_content ); ?>">
-                <?php if ( have_posts() ) : ?>
-                    <div class="content-archive-post <?php echo esc_attr( $grid_col ); ?>">
-		                <?php
-		                while ( have_posts() ) :
-			                the_post();
-                        ?>
+            <div class="col-12 col-md-8">
+				<?php if (have_posts()) : $post_count = $wp_query->post_count; ?>
+                    <div class="post-list">
+						<?php $i = 1; while (have_posts()) : the_post(); ?>
+
+                        <?php if ( $i == 1 ) : ?>
+                        <div class="featured-box">
+                        <?php endif; ?>
+
+                        <?php if ( 1 <= $i && $i <= 4  ) : ?>
                             <div class="item">
-                                <div class="item__content">
-                                    <h2 class="post-title">
-                                        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-							                <?php if (is_sticky() && is_home()) : ?>
-                                                <i class="fa fa-thumb-tack" aria-hidden="true"></i>
-							                <?php
-							                endif;
+                                <div class="item__thumbnail">
+                                    <?php
+                                    the_post_thumbnail('large');
 
-							                the_title();
-							                ?>
-                                        </a>
-                                    </h2>
+                                    if ( $i == 1 ) :
+                                    ?>
+                                        <h3 class="title">
+                                            <a href="<?php the_permalink(); ?>">
+                                                <?php the_title(); ?>
+                                            </a>
+                                        </h3>
+                                    <?php endif; ?>
+                                </div>
 
-                                    <div class="post-thumbnail">
-						                <?php the_post_thumbnail('large'); ?>
+                                <?php if ( $i != 1 ) : ?>
+                                    <div class="item__content">
+                                        <h3 class="title">
+                                            <a href="<?php the_permalink(); ?>">
+                                                <?php the_title(); ?>
+                                            </a>
+                                        </h3>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                        <?php endif; ?>
+
+                        <?php if ( $i == 4 || ( $i >= 1 && $post_count <= 4 ) ) : ?>
+                        </div>
+                        <?php endif; ?>
+
+                        <?php if ( $i == 5 ) : ?>
+                            <div class="second-box">
+                        <?php endif; ?>
+
+                            <?php if ( $i > 4 ) : ?>
+                                <div class="item">
+                                    <div class="item__thumbnail">
+                                        <?php the_post_thumbnail('large'); ?>
                                     </div>
 
-					                <?php healthnews_post_meta(); ?>
+                                    <div class="item__content">
+                                        <h3 class="title">
+                                            <a href="<?php the_permalink(); ?>">
+                                                <?php the_title(); ?>
+                                            </a>
+                                        </h3>
 
-                                    <div class="post-desc">
-                                        <p>
-							                <?php
-							                if (has_excerpt()) :
-								                echo esc_html(get_the_excerpt());
-							                else:
-								                echo wp_trim_words(get_the_content(), 30, '...');
-							                endif;
-							                ?>
+                                        <p class="desc">
+                                            <?php
+                                            if (has_excerpt()) :
+                                                echo esc_html(get_the_excerpt());
+                                            else:
+                                                echo wp_trim_words(get_the_content(), 30, '...');
+                                            endif;
+                                            ?>
                                         </p>
-
-                                        <a href="<?php the_permalink(); ?>" class="text-read-more">
-							                <?php esc_html_e('Read more', 'healthnews'); ?>
-                                        </a>
-
-						                <?php healthnews_link_page(); ?>
                                     </div>
                                 </div>
+                            <?php endif; ?>
+
+                        <?php if ( $i > 4 && $i == $post_count ) : ?>
                             </div>
-		                <?php
-		                endwhile;
-		                wp_reset_postdata();
-		                ?>
+                        <?php endif; ?>
+
+						<?php $i++; endwhile; wp_reset_postdata(); ?>
                     </div>
-                <?php
-	                healthnews_pagination();
-                else:
-	                if ( is_search() ) :
-		                get_template_part('template-parts/post/content', 'no-data');
-	                endif;
-                endif;
-                ?>
+					<?php
+					healthnews_pagination();
+				endif;
+				?>
+                <div class="post-list">
+
+                </div>
             </div>
 
-            <?php
-            if ( $sidebar !== 'hide' ) :
-                get_sidebar();
-            endif;
-            ?>
+			<?php if( is_active_sidebar( 'sidebar-single' ) ): ?>
+                <aside class="col-12 col-md-4 site-sidebar site-sidebar-single">
+					<?php dynamic_sidebar( 'sidebar-single' ); ?>
+                </aside>
+			<?php endif; ?>
         </div>
     </div>
 </div>
