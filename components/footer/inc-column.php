@@ -15,7 +15,7 @@ if( is_active_sidebar( 'sidebar-footer-column-1' ) || is_active_sidebar( 'sideba
 
                         if( is_active_sidebar( 'sidebar-footer-column-'.$j ) ):
                     ?>
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-<?php echo esc_attr( $healthnews_col ); ?>">
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-<?php echo esc_attr( $healthnews_col ); ?>">
                             <?php dynamic_sidebar( 'sidebar-footer-column-'.$j ); ?>
                         </div>
                     <?php

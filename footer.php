@@ -24,6 +24,7 @@ if ( !is_404() ) :
         ?>
     </footer>
 <?php
+	get_template_part('components/inc','menu-mobile');
 endif;
 
 wp_footer();

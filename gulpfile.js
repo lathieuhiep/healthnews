@@ -79,7 +79,7 @@ function buildStylesBootstrap() {
 // Task build js bootstrap
 function buildLibsBootstrapJS() {
     return src([
-        `${pathNodeModule}/bootstrap/js/dist/collapse.js`
+        `${pathNodeModule}/bootstrap/js/dist/offcanvas.js`
     ])
         .pipe(babel())
         .pipe(webpack({

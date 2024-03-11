@@ -384,4 +384,22 @@ if ( class_exists( 'CSF' ) ) {
 			),
 		)
 	) );
+
+	// add javascript
+	CSF::createSection( $healthnews_prefix, array(
+		'parent' => 'opt_footer_section',
+		'title'  => esc_html__( 'Thêm mã javascript', 'clinic' ),
+		'fields' => array(
+			array(
+				'id'       => 'opt_footer_add_javascript',
+				'type'     => 'code_editor',
+				'title'    => esc_html__('Code', 'clinic'),
+				'sanitize' => false,
+				'settings' => array(
+					'theme'  => 'monokai',
+					'mode'   => 'javascript',
+				),
+			),
+		)
+	) );
 }

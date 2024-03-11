@@ -44,10 +44,20 @@
   }
 
   &__column {
+    @media (max-width: 767px) {
+      border-top: 1px solid #bcbabb;
+    }
+
     .box-warp {
-      padding: 1rem;
-      border-right: 1px solid #bcbabb;
-      border-left: 1px solid #bcbabb;
+      @media (min-width: 768px) {
+        padding: 1rem;
+        border-right: 1px solid #bcbabb;
+        border-left: 1px solid #bcbabb;
+      }
+
+      @media (max-width: 767px) {
+        padding: 1.5rem 1.2rem;
+      }
 
       p {
         margin-bottom: 0;

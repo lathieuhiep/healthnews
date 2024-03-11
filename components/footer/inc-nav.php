@@ -1,6 +1,6 @@
 <?php if ( has_nav_menu( 'footer-menu' ) ) : ?>
 
-<div class="global-footer__nav">
+<div class="global-footer__nav d-none d-md-block">
     <div class="container">
         <div class="grid-layout">
             <?php

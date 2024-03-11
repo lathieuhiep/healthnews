@@ -18,35 +18,6 @@ function healthnews_register_required_plugins() {
 			'required'  =>  true,
 			'source' => 'https://github.com/Codestar/codestar-framework/archive/refs/heads/master.zip'
 		),
-
-		// This is an example of how to include a plugin from the WordPress Plugin Repository
-        array(
-            'name'      =>  'CMB2',
-            'slug'      =>  'cmb2',
-            'required'  =>  true,
-        ),
-
-		// This is an example of how to include a plugin from the WordPress Plugin Repository
-		array(
-			'name'      =>  'Elementor',
-			'slug'      =>  'elementor',
-			'required'  =>  true,
-		),
-
-		// This is an example of how to include a plugin from the WordPress Plugin Repository
-		array(
-			'name'      =>  'Breadcrumb Navxt',
-			'slug'      =>  'breadcrumb-navxt',
-			'required'  =>  true,
-		),
-
-		// This is an example of how to include a plugin from the WordPress Plugin Repository
-		array(
-			'name'      =>  'Contact Form 7',
-			'slug'      =>  'contact-form-7',
-			'required'  =>  true,
-		),
-
 	);
 
 	/**

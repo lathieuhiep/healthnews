@@ -2,8 +2,6 @@
 $sticky_menu = healthnews_get_option( 'opt_menu_sticky', '1' );
 $logo = healthnews_get_option( 'opt_general_logo' );
 $hotline = healthnews_get_opt_contact_hotline();
-$email = healthnews_get_opt_contact_email();
-$link_facebook = healthnews_get_opt_link_facebook();
 ?>
 
 <header class="global-header">
@@ -24,21 +22,17 @@ $link_facebook = healthnews_get_opt_link_facebook();
                     <?php endif; ?>
                 </a>
 
-                <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#primary-menu"
-                        aria-controls="site-menu" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fa fa-bars" aria-hidden="true"></i>
-                </button>
+                <div class="menu-offcanvas d-lg-none">
+                    <button class="btn btn-primary d-flex align-items-center" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+                        <i class="fa fa-bars" aria-hidden="true"></i>
+                    </button>
+                </div>
             </div>
 
             <div class="contact">
                 <a class="item" href="tel:<?php echo esc_attr(healthnews_preg_replace_ony_number($hotline)); ?>">
                     <strong><?php esc_html_e('Đường dây nóng:', 'healthnews'); ?></strong>
                     <strong><?php echo esc_html($hotline); ?></strong>
-                </a>
-
-                <a class="item" href="mailto:<?php echo esc_attr($email); ?>">
-                    <strong><?php esc_html_e('Email:', 'healthnews'); ?></strong>
-                    <strong><?php echo esc_html($email); ?></strong>
                 </a>
             </div>
         </div>
@@ -71,14 +65,8 @@ $link_facebook = healthnews_get_opt_link_facebook();
 <div class="header-action-box">
     <div class="container">
         <div class="grid-layout d-flex justify-content-between align-items-center">
-            <div class="item"></div>
-
-            <div class="item right-box d-flex align-items-center">
-                <a class="link-facebook d-inline-block me-3" href="<?php echo esc_url($link_facebook); ?>" target="_blank">
-                    <i class="fa-brands fa-square-facebook"></i>
-                </a>
-
-	            <?php get_search_form(); ?>
+            <div class="item">
+                <div id="clock"></div>
             </div>
         </div>
     </div>

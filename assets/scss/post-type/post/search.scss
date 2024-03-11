@@ -5,7 +5,16 @@
     .item {
       display: grid;
       grid-gap: 2.4rem;
-      grid-template-columns: 20rem 1fr;
+
+      &__thumbnail {
+        img {
+          width: 100%;
+        }
+      }
+
+      @media (min-width: 376px) {
+        grid-template-columns: 20rem 1fr;
+      }
 
       ~ .item {
         margin-top: 2.4rem;

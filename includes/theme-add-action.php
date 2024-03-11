@@ -94,3 +94,13 @@ function healthnews_disable_emojis_tinymce( $plugins ) {
 		return array();
 	}
 }
+
+// javascript footer
+add_action('wp_footer', 'healthnews_add_script_footer');
+function healthnews_add_script_footer(): void {
+	$add_script = healthnews_get_option( 'opt_footer_add_javascript' );
+
+	if ( $add_script ) {
+		echo $add_script;
+	}
+}

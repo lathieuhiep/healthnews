@@ -51,6 +51,10 @@ pre {
   flex: 1 0 auto;
 }
 
+.reset-list {
+  @include reset-list();
+}
+
 #site-loading {
   position: fixed;
   top: 0;

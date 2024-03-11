@@ -45,8 +45,9 @@
         $( document ).general_owlCarousel_custom( '.site-post-slides' )
         /* End Gallery Single */
 
-        // scroll new posts tpl home
-        scrollNewPostsTPLHome()
+        // Update the clock every second
+        setInterval(updateClock, 1000);
+        updateClock();
     });
 
     // loading
@@ -107,9 +108,25 @@
 
     }
 
-    // function scroll new posts tpl home
-    const scrollNewPostsTPLHome = () => {
+    const updateClock = () => {
+        const daysOfWeek = ['Chủ Nhật', 'Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy'];
 
+        const now = new Date();
+        const dayOfWeek = daysOfWeek[now.getDay()];
+        const day = now.getDate().toString().padStart(2, '0');
+        const month = (now.getMonth() + 1).toString().padStart(2, '0'); // Tháng bắt đầu từ 0
+        const year = now.getFullYear();
+        const hours = now.getHours().toString().padStart(2, '0');
+        const minutes = now.getMinutes().toString().padStart(2, '0');
+        const seconds = now.getSeconds().toString().padStart(2, '0');
+
+        // Lấy thông tin về múi giờ (GMT)
+        const gmtOffset = now.getTimezoneOffset() / 60;
+        const gmtSign = gmtOffset > 0 ? '-' : '+ ';
+        const gmtString = `GMT ${gmtSign}${Math.abs(gmtOffset).toString().padStart(2, '0')}:00`;
+
+        const clockElement = document.getElementById('clock');
+        clockElement.textContent = `${dayOfWeek}, ${day}/${month}/${year}, ${hours}:${minutes}:${seconds} [${gmtString}]`;
     }
 
 } )( jQuery );
