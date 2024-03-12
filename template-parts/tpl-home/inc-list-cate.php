@@ -1,9 +1,11 @@
 <?php
-$new_post_ids = get_query_var('new_post_ids');
 $categories = healthnews_get_option('opt_tpl_home_list_category');
 
 if ( empty($categories) ) {
-	return;
+	$categories = get_terms(array(
+		'taxonomy' => 'category',
+		'fields' => 'ids'
+	));
 }
 ?>
 
@@ -16,7 +18,6 @@ if ( empty($categories) ) {
 			'orderby' => 'id',
 			'order' => 'desc',
 			'cat' => $category,
-			'post__not_in' => $new_post_ids,
 			'ignore_sticky_posts' => 1,
 		);
 
