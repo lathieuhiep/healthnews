@@ -25,6 +25,7 @@ if ( !is_404() ) :
     </footer>
 <?php
 	get_template_part('components/inc','menu-mobile');
+	get_template_part('components/inc','chat-with-us');
 endif;
 
 wp_footer();

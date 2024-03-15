@@ -12,6 +12,10 @@ body {
   overflow-x: hidden;
   word-break: break-word;
   @include flex-column;
+
+  @media (max-width: 991px) {
+    font-size: 1.6rem;
+  }
 }
 
 a {
@@ -73,7 +77,7 @@ pre {
   bottom: 0;
   cursor: pointer;
   position: fixed;
-  right: 15px;
+  right: 100px;
   z-index: 1000;
   @include transition();
 
@@ -88,7 +92,6 @@ pre {
 
   &.active_top {
     opacity: 1;
-    bottom: 15px;
   }
 
   &:hover {
@@ -212,5 +215,23 @@ pre {
       border-color: $background-hover;
       color: #ffffff;
     }
+  }
+}
+
+.chat-with-us {
+  position: fixed;
+  right: 1.6rem;
+  z-index: 99;
+  display: grid;
+  grid-row-gap: 1.2rem;
+  grid-template-columns: 5rem;
+  align-items: center;
+
+  @media (min-width: 992px) {
+    bottom: 10rem;
+  }
+
+  @media (max-width: 991px) {
+    bottom: 10rem;
   }
 }

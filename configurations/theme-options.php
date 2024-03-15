@@ -114,6 +114,35 @@ if ( class_exists( 'CSF' ) ) {
 				'title'   => esc_html__( 'Facebook', 'healthnews' ),
 				'default' => '#'
 			),
+
+			array(
+				'id'      => 'opt_general_phone',
+				'type'    => 'text',
+				'title'   => esc_html__( 'Điện thoại', 'clinic' ),
+				'default' => '0888.888.115'
+			),
+
+			array(
+				'id'     => 'opt_general_chat_zalo',
+				'type'   => 'fieldset',
+				'title'  => esc_html__('ZaLo', 'clinic'),
+				'fields' => array(
+					array(
+						'id'    => 'phone',
+						'type'  => 'text',
+						'title' => esc_html__( 'Số điện thoại', 'clinic' ),
+						'default' => '0888888115',
+					),
+
+					array(
+						'id'    => 'qr_code',
+						'type'  => 'text',
+						'title' => esc_html__( 'Mã QR', 'clinic' ),
+						'default' => 'i44981jfbz1g',
+						'desc' => esc_html__('Link quét lấy mã:', 'clinic') . ' https://pageloot.com/vi/quet-ma-qr/'
+					),
+				),
+			),
 		)
 	) );
 

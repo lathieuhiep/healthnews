@@ -48,6 +48,9 @@
         // Update the clock every second
         setInterval(updateClock, 1000);
         updateClock();
+
+        // handle zalo click
+        handleZaLoClick()
     });
 
     // loading
@@ -127,6 +130,41 @@
 
         const clockElement = document.getElementById('clock');
         clockElement.textContent = `${dayOfWeek}, ${day}/${month}/${year}, ${hours}:${minutes}:${seconds} [${gmtString}]`;
+    }
+
+    // handle check mobile device
+    const isMobileDevice = () => {
+        return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
+    }
+
+    // handle click zalo
+    const handleZaLoClick = () => {
+        const chatWithUsZalo = $('.chat-with-us__zalo')
+
+        if ( chatWithUsZalo.length ) {
+            chatWithUsZalo.on('click', function (e) {
+                e.preventDefault()
+
+                let link;
+                const phone = $(this).data('phone')
+                const qrCode = $(this).data('qr-code')
+
+                if ( isMobileDevice() ) {
+                    if (navigator.userAgent.includes('Android')) {
+                        // android
+                        link = `https://zaloapp.com/qr/p/${qrCode}`;
+                    } else {
+                        // ios
+                        link = `zalo://qr/p/${qrCode}`;
+                    }
+                } else {
+                    // pc
+                    link = `zalo://conversation?phone=${phone}`
+                }
+
+                window.open(link, '_parent');
+            })
+        }
     }
 
 } )( jQuery );
