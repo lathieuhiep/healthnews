@@ -71,20 +71,3 @@ $hotline = healthnews_get_opt_contact_hotline();
         </div>
     </div>
 </div>
-
-
-<div class="float-contact">
-    <div class="chat-zalo">
-        <div class="chat-zalo">
-            <a href="https://zalo.me/4019565536704794124?gidzl=OSLMFl5Lxp9dtLym_qdkCspTLZVZJESnTenMDBH9vJWWYmKwiKddR7JQLs7W6BCmS8PKD3cXfe4qybhZCm" target="_blank"><img title="Chat Zalo" src="https://dakhoaquoctedanang.com/wp-content/uploads/2023/12/zalo-icon.png" width="45" height="" /></a>
-        </div>
-    </div>
-
-    <div class="chat-facebook">
-        <a href="https://www.messenger.com/t/pkdakhoaquoctedanang" target="_blank"><img title="Chat Facebook" src="https://dakhoaquoctedanang.com/wp-content/uploads/2023/12/mess-icon.png" alt="facebook-icon" width="45" height="40" /></a>
-    </div>
-
-    <div class="call-hotline">
-        <a href="tel:0376767167"><img title="Call Hotline" src="https://dakhoaquoctedanang.com/wp-content/uploads/2023/12/dien-thoai-icon.png" alt="phone-icon" width="45" height="" /></a>
-    </div>
-</div>
