@@ -89,3 +89,6 @@ require get_parent_theme_file_path( '/includes/register-sidebar.php' );
 
 // Require Theme Scripts
 require get_parent_theme_file_path( '/includes/theme-scripts.php' );
+
+// Require Theme shortcode
+require get_parent_theme_file_path( '/includes/theme-shortcode.php' );

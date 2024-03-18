@@ -123,6 +123,13 @@ if ( class_exists( 'CSF' ) ) {
 			),
 
 			array(
+				'id'      => 'opt_general_link_chat',
+				'type'    => 'text',
+				'title'   => esc_html__( 'Link Chat', 'healthnews' ),
+				'default' => 'https://drt.zoosnet.net/LR/Chatpre.aspx?id=DRT81217739&lng=en?skdn'
+			),
+
+			array(
 				'id'     => 'opt_general_chat_zalo',
 				'type'   => 'fieldset',
 				'title'  => esc_html__('ZaLo', 'clinic'),
@@ -142,6 +149,27 @@ if ( class_exists( 'CSF' ) ) {
 						'desc' => esc_html__('Link quét lấy mã:', 'clinic') . ' https://pageloot.com/vi/quet-ma-qr/'
 					),
 				),
+			),
+		)
+	) );
+
+	//
+	// Create a section ask doctor
+	CSF::createSection( $healthnews_prefix, array(
+		'title'  => esc_html__( 'Hỏi bác sĩ', 'healthnews' ),
+		'icon'   => 'fas fa-bars',
+		'fields' => array(
+			array(
+				'id'      => 'opt_ask_doctor_title',
+				'type'    => 'text',
+				'title'   => esc_html__('Tiêu đề', 'healthnews'),
+				'default' => ''
+			),
+
+			array(
+				'id'    => 'opt_ask_doctor_content',
+				'type'  => 'wp_editor',
+				'title' => esc_html__('Nội dung', 'healthnews'),
 			),
 		)
 	) );
