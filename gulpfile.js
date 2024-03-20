@@ -79,6 +79,7 @@ function buildStylesBootstrap() {
 // Task build js bootstrap
 function buildLibsBootstrapJS() {
     return src([
+        `${pathNodeModule}/bootstrap/js/dist/modal.js`,
         `${pathNodeModule}/bootstrap/js/dist/offcanvas.js`
     ])
         .pipe(babel())

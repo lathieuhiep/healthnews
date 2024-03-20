@@ -118,8 +118,16 @@ if ( class_exists( 'CSF' ) ) {
 			array(
 				'id'      => 'opt_general_phone',
 				'type'    => 'text',
-				'title'   => esc_html__( 'Điện thoại', 'clinic' ),
+				'title'   => esc_html__( 'Điện thoại', 'healthnews' ),
 				'default' => '0888.888.115'
+			),
+
+			array(
+				'id'      => 'opt_general_medical_appointment_form',
+				'type'    => 'select',
+				'title'   => esc_html__( 'Form hẹn khám', 'healthnews' ),
+				'desc'    => esc_html__( 'Hiển thị khi click button hẹn khám', 'healthnews' ),
+				'options' => healthnews_get_form_cf7(),
 			),
 
 			array(
@@ -132,21 +140,21 @@ if ( class_exists( 'CSF' ) ) {
 			array(
 				'id'     => 'opt_general_chat_zalo',
 				'type'   => 'fieldset',
-				'title'  => esc_html__('ZaLo', 'clinic'),
+				'title'  => esc_html__('ZaLo', 'healthnews'),
 				'fields' => array(
 					array(
 						'id'    => 'phone',
 						'type'  => 'text',
-						'title' => esc_html__( 'Số điện thoại', 'clinic' ),
+						'title' => esc_html__( 'Số điện thoại', 'healthnews' ),
 						'default' => '0888888115',
 					),
 
 					array(
 						'id'    => 'qr_code',
 						'type'  => 'text',
-						'title' => esc_html__( 'Mã QR', 'clinic' ),
+						'title' => esc_html__( 'Mã QR', 'healthnews' ),
 						'default' => 'i44981jfbz1g',
-						'desc' => esc_html__('Link quét lấy mã:', 'clinic') . ' https://pageloot.com/vi/quet-ma-qr/'
+						'desc' => esc_html__('Link quét lấy mã:', 'healthnews') . ' https://pageloot.com/vi/quet-ma-qr/'
 					),
 				),
 			),
@@ -445,12 +453,12 @@ if ( class_exists( 'CSF' ) ) {
 	// add javascript
 	CSF::createSection( $healthnews_prefix, array(
 		'parent' => 'opt_footer_section',
-		'title'  => esc_html__( 'Thêm mã javascript', 'clinic' ),
+		'title'  => esc_html__( 'Thêm mã javascript', 'healthnews' ),
 		'fields' => array(
 			array(
 				'id'       => 'opt_footer_add_javascript',
 				'type'     => 'code_editor',
-				'title'    => esc_html__('Code', 'clinic'),
+				'title'    => esc_html__('Code', 'healthnews'),
 				'sanitize' => false,
 				'settings' => array(
 					'theme'  => 'monokai',

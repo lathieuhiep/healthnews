@@ -273,3 +273,30 @@ pre {
     }
   }
 }
+
+.modal-appointment-form {
+  .wpcf7-form {
+    p {
+      &:has(input.wpcf7-submit) {
+        position: relative;
+        text-align: center;
+      }
+
+      .wpcf7-spinner {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    .wpcf7-form-control-wrap {
+      input,
+      textarea {
+        color: #000;
+        background-color: #e6e6e6;
+      }
+    }
+  }
+}
